@@ -8,19 +8,19 @@ Pazar sera une application multiplatform que l'on pourra retrouver en tant que w
 
 ### Dans ce fichier sont présentés
 
-- L'utilisation dynamique du fichier README en tant que journal de bord
-- Les fonctionnalités de l'application
-- Les technologies, frameworks et languages utilisés
-- Les documents annexes et ce qu'ils contiennent
-- L'architecture de l'application
-- Les bases de données
-- Le déploiement et l'hébergement
-- L'UX/UI
-- Les services tiers
+    - L'utilisation dynamique du fichier README en tant que journal de bord
+    - Les fonctionnalités de l'application
+    - Les technologies, frameworks et languages utilisés
+    - Les documents annexes et ce qu'ils contiennent
+    - L'architecture de l'application
+    - Les bases de données
+    - Le déploiement et l'hébergement
+    - L'UX/UI
+    - Les services tiers
 
 ## Journal de bord
 
-Le présent fichier (README) fait office de journal de bord afin de présenter les fonctionnalités de l'application, mais aussi avoir un suivi sur son développement, son déploiement, sa maintenance, sa gestion et sa mise à jour. Des fichiers annexes tels que CONTRIBUTING.md, CHANGELOG.md, ROADMAP.md seront également crées et mis à jour en fonction de l'avancée du projet. README sera le fichier de référence pour l'ensemble de l'application car l'utilisation du format markdown permet une navigation facilitée entre les différentes parties du projet et le README est également soumis au versioning liés au commits. Il nous est donc simple de suivre les changements qui ont eu lieu au sein du projet.
+    Le présent fichier (README) fait office de journal de bord afin de présenter les fonctionnalités de l'application, mais aussi avoir un suivi sur son développement, son déploiement, sa maintenance, sa gestion et sa mise à jour. Des fichiers annexes tels que CONTRIBUTING.md, CHANGELOG.md, ROADMAP.md seront également crées et mis à jour en fonction de l'avancée du projet. README sera le fichier de référence pour l'ensemble de l'application car l'utilisation du format markdown permet une navigation facilitée entre les différentes parties du projet et le README est également soumis au versioning liés au commits. Il nous est donc simple de suivre les changements qui ont eu lieu au sein du projet.
 
 ## Architecture de l'application
 
@@ -32,19 +32,19 @@ Le présent fichier (README) fait office de journal de bord afin de présenter l
 
 ## User Experience (UX)
 
-L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'application est lancée. Ici, nous allons différencier 3 versions d'application. Webapp, iOS et android. D'autres versions pourront être développées ultérieurement. Elles partageront les mêmes données mais il y aura quelques différences en termes d'interface mais ce point sera traité dans la section UI. Les différences en terme d'expérience utilisateur seront traitées ici.
+    L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'application est lancée. Ici, nous allons différencier 3 versions d'application. Webapp, iOS et android. D'autres versions pourront être développées ultérieurement. Elles partageront les mêmes données mais il y aura quelques différences en termes d'interface mais ce point sera traité dans la section UI. Les différences en terme d'expérience utilisateur seront traitées ici.
 
 ### Version webapp
 
-#### Arrivée page d'accueil via URL (ex: pazar.com)
+#### Landing page via URL (ex: pazar.com)
 
-L'utilisateur arrive sur une interface où il lui est demandé de s'inscrire ou de se connecter. Si il choisit de s'inscrire il passe par le processus d'inscription. S'il choisit de se connecter, arrive dans le processus de connexion. Il faut savoir que pour l'un ou pour l'autre nous pourrions faire appel à service tiers pour l'authentication ou le configurer nous même.
+    L'utilisateur arrive sur une interface où il lui est demandé de s'inscrire ou de se connecter. Si il choisit de s'inscrire il passe par le processus d'inscription. S'il choisit de se connecter, arrive dans le processus de connexion. Il faut savoir que pour l'un ou pour l'autre nous pourrions faire appel à service tiers pour l'authentication ou le configurer nous même.
 
-#### Inscription
+#### Processus d'inscription
 
 ##### Authentication et KYC
 
-Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu tel qu'un clique sur un bouton par exemple. Ainsi, les évènements seront mentionnés de la façon suivante : ==EVENT==
+    Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu tel qu'un clique sur un bouton par exemple. Ainsi, les évènements seront mentionnés de la façon suivante : ==EVENT==
 
 ###### 1. Formulaire d'inscription simple
 
