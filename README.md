@@ -40,7 +40,7 @@ L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'a
 
 ##### Inscription
 
-Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre, les évènements seront en highlight de la façon suivant "==Suivant==" lors d'un clique sur un bouton par exemple.
+Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre, les évènements seront en highlight de la façon suivant ==Suivant== lors d'un clique sur un bouton par exemple.
 
 1. Il lui sera demandé de remplir un formulaire d'inscription simple.
 
