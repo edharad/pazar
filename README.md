@@ -4,7 +4,7 @@
 
 L'objectif de l'application "Pazar" est de fournir une place de marché en ligne sécurisée pour le commerce entre particulier. Notamment la vente et l'achat de biens entre particuliers. Cette place de marché se présente sous la forme d'un réseau social semblable aux applications déjà existantes. Cependant, tous les utilisateurs doivent passer une procédure de vérification d'identité (KYC) afin de vendre ou d'acheter sur la plateforme. L'application répond au besoin croissant de garantir la sécurité des achats et des ventes au sein de relations commerciales de tout type (C2C, B2C, B2B, etc.). 
 
-Dans ce fichier sont présentés : 
+### Dans ce fichier sont présentés
 
 - L'utilisation dynamique du fichier README en tant que journal de bord 
 - Les fonctionnalités de l'application
