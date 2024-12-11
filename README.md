@@ -36,19 +36,29 @@ L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'a
 
 ### Version webapp
 
-#### Authentication et KYC
+#### Arrivée page d'accueil via URL (ex: pazar.com)
 
-##### Inscription
+L'utilisateur arrive sur une interface où il lui est demandé de s'inscrire ou de se connecter. Si il choisit de s'inscrire il passe par le processus d'inscription. S'il choisit de se connecter, arrive dans le processus de connexion. Il faut savoir que pour l'un ou pour l'autre nous pourrions faire appel à service tiers pour l'authentication ou le configurer nous même.
 
-Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre, les évènements seront en highlight de la façon suivant ==Suivant== lors d'un clique sur un bouton par exemple.
+#### Inscription
 
-1. Il lui sera demandé de remplir un formulaire d'inscription simple.
+##### Authentication et KYC
 
-- Adresse email ou numéro de téléphone (Numéro reconnu selon le lieu de connexion. Choix de l'indicatif di nécessaire)
+Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu tel qu'un clique sur un bouton par exemple. Ainsi, les évènements seront mentionnés de la façon suivante : ==EVENT==
+
+###### 1. Formulaire d'inscription simple
+
+- Adresse email ou numéro de téléphone (Numéro reconnu selon le lieu de connexion. Choix de l'indicatif si nécessaire)
 - Nom
 - Prénom
 - Date de naissance
 - Nom d'utilisateur (avec proposition d'alternative)
+
+==CLIQUE BOUTON SUIVANT==
+
+###### 2. Accueil (Feed)
+
+L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où, de la même façon que sur instagram, s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize.
 
 ## User Interface (UI)
 
