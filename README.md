@@ -1,4 +1,4 @@
-# Pazar 1.0.0
+# Pazar 0.0.0
 
 ## Présentation
 
@@ -48,7 +48,7 @@ Pour chaque changement d'interface :
 
 - Une maquette annexée qui sera développée sur figma et décrite dans le point qui le concerne.
 - Explication de l'expérience de l'utilisateur avec chaque élément de l'interface.
-  - Redirections et changement en cas de succès ou d'erreurs
+- Redirections et changement en cas de succès ou d'erreurs
 
 **Informations importantes :**
 
@@ -60,7 +60,7 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 
 ### 1. Webapp taille desktop UX/UI
 
-#### 1.1 Landing page via URL (ex: pazar.com) = GET('/')
+#### 1.1. Landing page via URL (ex: pazar.com) = GET('/')
 
 ##### 1.1.1 Landing page - Interface (UI)
 
@@ -72,11 +72,15 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 
 ##### 1.1.2 Landing page - Experience (UX)
 
-#### 1.2 Inscription
+#### 1.2. Inscription
 
-Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple.
+Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone sur le formulaire de l'interface de la landing page. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple. Ici nous partons du principe que celui-ci a appuyé sur le bouton: 
+
+==S'INSCRIRE== => /FORMULAIRE D'INSCRIPTION SIMPLE
 
 ##### 1.2.1. Formulaire d'inscription simple
+
+Suite à la demande d'inscription, l'utilisateur
 
 - Adresse email ou numéro de téléphone (Numéro reconnu selon le lieu de connexion. Choix de l'indicatif si nécessaire)
 - Nom
@@ -88,7 +92,7 @@ Lors de la première partie de l'inscription, l'utilisateur passera directement 
 
 (Une info est présente sur un component où il doit cocher qui stipule qu'en s'inscrivant, il accepte nos conditions générales d'utilisation et la politique de confidentialité)
 
-    ==CLIQUE BOUTON SUIVANT==
+<span style="color: blue;">==CLIQUE BOUTON SUIVANT== ==> /INSERTION DU CODE REÇU PAR SMS OU EMAIL</span>
 
 ##### 1.2.2. Validation avec code reçu
 
@@ -118,7 +122,7 @@ Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l
 4. L'utilisateur est maintenant face à un component qui charge afin de lui montrer que l'anayse de sa procédure de KYC est en cours. Si il y a une erreur l'état du component change et mentionne à l'utilisateur ce qui ne va pas. Un bouton apparait afin de corriger le point si cela est possible. Si c'est possible, l'utilisateur retourne à l'étape du KYC, clique sur suivant et arrive directement à l'étape suivante qu'il faut corriger ou à la fin de la procédure de KYC où l'analyse a lieu si il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
 En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur arrive automatiquement sur l'accueil et l'inscription est finalisée.
 
-#### 1.3 Connexion
+#### 1.3. Connexion
 
 #### 1.4. Accueil (Feed)
 
@@ -136,7 +140,6 @@ Avant tout, il faut savoir que cette interface est très importante. Il y a un c
 L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où, de la même façon que sur instagram, s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize et qui prend en compte une multitude de parametres liés à l'utilisateur.
 
 Comme l'utilisateur n'a pas d'abonnés ni d'abonnements, l'utilisateur a la possibilité, grâce à l'apparition d'un component situé sur la partie superieur de la section où se situe le feed, qui contient du texte informant de la possibilité de s'abonner à d'autres utlisateurs ou d'inviter ses contacts, d'appuyer sur un bouton afin de trouver des ami(e)s. En cliquant sur le bouton il peut accéder à une partie de l'app où s'affiche une liste d'utilisateurs en fonction du système de suggestion. d'ajouter des ami(e)s qui lui sont suggerés en fonction des données transmises ou du système de suggestion, qu'il faudra également configuré. Mais il peut également inviter ses contacts à rejoindre l'application.
-
 
 ### 2. Webapp taille tablette UX/UI
 
