@@ -4,9 +4,7 @@
 
 L'objectif de l'application "Pazar" est de fournir une place de marché en ligne sécurisée pour le commerce entre particuliers. Notamment la vente et l'achat de biens entre particuliers. Cette place de marché se présente sous la forme d'un réseau social semblable aux applications déjà existantes. Cependant, tous les utilisateurs doivent passer une procédure de vérification d'identité (KYC) afin de vendre ou d'acheter des produits sur la plateforme. Cette procédure est semblable à celle des applications de trading de cryptomonnaie. L'application répond au besoin croissant de garantir la sécurité des achats et des ventes au sein de relations commerciales de tout type (C2C, B2C, B2B, etc.). Pazar souhaite s'étendre globalement dans le monde afin de promouvoir les circuits économiques courts.
 
-Pazar sera une application multiplatformes que l'on pourra retrouver en tant que webapp avec accès par URL, en application mobile et tablette pour les iOS, Android etc, et d'autres supports si cela est intéressant pour l'expansion du projet.
-
-### Liste non exhaustive des points abordés dans ce document
+Pazar sera une application multiplatformes que l'on pourra retrouver en tant que webapp avec accès par URL, en application mobile et tablette pour les iOS, Android etc, et d'autres supports si cela est intéressant pour l'expansion du projet. Voici une liste non exhaustive des points abordés dans ce document :
 
 - L'utilisation dynamique du fichier README en tant que journal de bord
 - Les fonctionnalités de l'application
@@ -18,7 +16,7 @@ Pazar sera une application multiplatformes que l'on pourra retrouver en tant que
 - L'UX/UI
 - Les services tiers
 
-## README = Journal de bord
+## Journal de bord
 
 Le présent fichier (README) fait office de journal de bord afin de présenter les fonctionnalités de l'application, mais aussi avoir un suivi sur son développement, son déploiement, sa maintenance, sa gestion et sa mise à jour. Des fichiers annexes tels que CONTRIBUTING.md, CHANGELOG.md, ROADMAP.md seront également crées et mis à jour en fonction de l'avancée du projet. README sera le fichier de référence pour l'ensemble de l'application car il permet d'être versionné et d'être consulté de façon dynamique.
 
@@ -32,59 +30,51 @@ Le présent fichier (README) fait office de journal de bord afin de présenter l
 
 ## User Experience (UX) & User Interface (UI)
 
+### Introduction UX/UI
+
 L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'application est lancée. Ici, nous allons différencier 3 versions d'application. Webapp, iOS et android. D'autres versions pourront être développées ultérieurement. Elles partageront les mêmes données mais il y aura quelques différences en termes d'interface. Ces aspects seront clarifiés dans les explications relatives à l'UI.
 
-Par conséquent, ici nous allons aborder chaque étape de l'expérience utilisateur en partant initialement de son inscription jusqu'à l'utilisation de chaque fonctionnalité de l'application pour chaque version de l'application. A savoir les versions webapp et mobile.
-
-Pour chaque étape de l'expérience utilisateur :
-
-- Description de l'interface utilisateur qui trouvera une maquette annexée qui sera développée sur figma. Chaque component des interfaces sera décrit et nommé dans la partie UI des différents points.
-- Explication de l'expérience de l'utilisateur avec chaque élément de l'interface
-- Description et explicaiton des déclencheurs (clique bouton ou autre évènement), qui font la redirection ou qui font induisent un changement d'état de l'interface.
-- Les changements ou redirections en cas de succès de l'utilisation de la fonctionnalité utilisée
-- Les changements ou redirections en cas d'erreur
-
-**Informations importantes :**
-
-- Les triggers liés à l'interaction de l'utilisateur seront mentionné de la façon suivante : **==CLIQUE BOUTON==**
-- Les redirections seront mentionnées de la façon suivante : **==>SECTION, ==>PAGE/URL**
-- Les autres events seront mentionnés de la façon suivante :
-
-Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
-
-### 1. Version webapp
-
-#### 1.1 Landing page via URL (ex: pazar.com)
-
-##### 1.1.1 Interface de la landing page (UI)
-
-La landing page de la webapp se distingue en 3 tailles et pour chacune des tailles, la dispositon et la visibilité des composants seront différentes pour des question de responsive. Par conséquent, il sera nécessaire de montrer où se trouvent les composants en fonction de chaque taille pour chaque situation. Les tailles en question sont les suivantes :
+La webapp se distingue en 3 tailles et pour chacune des tailles, la dispositon et la visibilité des composants seront différentes pour des question de responsive. Par conséquent, il sera nécessaire de montrer où se trouvent les composants en fonction de chaque taille pour chaque situation. Les tailles en question sont les suivantes :
 
 1. Une taille desktop: ≥ 1025px
 2. Une taille tablette: ≥ 481px && ≤ 1024px
 3. Une taille mobile: ≤ 480px
 
-Comme dit préalablement, chaque interface utilisateur sera expliqué au moyen d'une maquette qui aura été crée sur figma.
+Le rendu en fonction des tailles ne devrait pas radicalement differer entre la version webapp taille mobile et la version mobile de l'application.
 
-###### 1.1.1.1 Landing page taille desktop
+Par conséquent, ici nous allons aborder chaque étape de l'expérience utilisateur en partant initialement de son inscription jusqu'à l'utilisation de chaque fonctionnalité de l'application pour chaque version de l'application. A savoir les versions webapp et mobile.
 
-###### 1.1.1.2 Landing page taille tablette
+Pour chaque changement d'interface :
 
-###### 1.1.1.3 Landing page taille mobile
+- Une maquette annexée qui sera développée sur figma et décrite dans le point qui le concerne.
+- Explication de l'expérience de l'utilisateur avec chaque élément de l'interface.
+  - Redirections et changement en cas de succès ou d'erreurs
 
-##### 1.1.2 Expérience de l'utilisateur avec la landing page (UX)
+**Informations importantes :**
 
-L'utilisateur a 3 options majeures sur la landing page:
+Si les triggers sont des boutons, le bouton en question sera integré dans l'explication sous la forme d'une image. Et si le trigger est autre chose, une fonction asynchrone qui vient à lancer une notification, celle-ci sera exprimée soit sous la forme de code soit sous sa forme graphique.
 
-1. Se connecter
-2. S'inscrire
-3. Accéder au menu du footer qui amène vers des informations concernant l'application. Notamment, la politique des données et des cookies, la confidentialité.
+Par exemple : --ici il faut mettre l'exemple--
 
-##### 1.1.3 Description et explication des déclencheurs
+Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
+
+### 1. Webapp taille desktop UX/UI
+
+#### 1.1 Landing page via URL (ex: pazar.com) = GET('/')
+
+##### 1.1.1 Landing page - Interface (UI)
+
+###### 1.1.1.1 Landing page - desktop (UI)
+
+###### 1.1.1.2 Landing page - tablette (UI)
+
+###### 1.1.1.3 Landing page - mobile (UI)
+
+##### 1.1.2 Landing page - Experience (UX)
 
 #### 1.2 Inscription
 
-Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple.
+Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple.
 
 ##### 1.2.1. Formulaire d'inscription simple
 
@@ -128,7 +118,9 @@ Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l
 4. L'utilisateur est maintenant face à un component qui charge afin de lui montrer que l'anayse de sa procédure de KYC est en cours. Si il y a une erreur l'état du component change et mentionne à l'utilisateur ce qui ne va pas. Un bouton apparait afin de corriger le point si cela est possible. Si c'est possible, l'utilisateur retourne à l'étape du KYC, clique sur suivant et arrive directement à l'étape suivante qu'il faut corriger ou à la fin de la procédure de KYC où l'analyse a lieu si il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
 En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur arrive automatiquement sur l'accueil et l'inscription est finalisée.
 
-#### 1.3. Accueil (Feed)
+#### 1.3 Connexion
+
+#### 1.4. Accueil (Feed)
 
 Avant tout, il faut savoir que cette interface est très importante. Il y a un component navigation (menu) disposé de façon vertiacle et qui contient des cliquables afin de pouvoir passer à d'autres parties de l'applications. En vrai, cela s'affiche de la façon suivant lorsque la fenêtre est suffisamment large. On y voit le logo en haut de la bande verticale. En dessous du logo dans cet ordre :
 
@@ -145,36 +137,39 @@ L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où, de la m
 
 Comme l'utilisateur n'a pas d'abonnés ni d'abonnements, l'utilisateur a la possibilité, grâce à l'apparition d'un component situé sur la partie superieur de la section où se situe le feed, qui contient du texte informant de la possibilité de s'abonner à d'autres utlisateurs ou d'inviter ses contacts, d'appuyer sur un bouton afin de trouver des ami(e)s. En cliquant sur le bouton il peut accéder à une partie de l'app où s'affiche une liste d'utilisateurs en fonction du système de suggestion. d'ajouter des ami(e)s qui lui sont suggerés en fonction des données transmises ou du système de suggestion, qu'il faudra également configuré. Mais il peut également inviter ses contacts à rejoindre l'application.
 
-## User Interface (UI)
 
-Sachant qu'il y a deux versions de l'application il faut tenir compte de certains aspects important qui affecteront l'interface. Un premier point concerne la distinction des version web et mobile. La web app sera bien entendu responsive en fonction de la taille de la fenêtre du navigateur et certains composants n'auront pas le même rendu en fonction de la taille. En ce qui concerne la version mobile, celle-ci sera également responsive en fonction de la taille.
+### 2. Webapp taille tablette UX/UI
 
-##
+### 3. Webapp taille mobile UX/UI
+
+### 4. Mobile app UX/UI
+
+### 5. Mobile app UX/UI
 
 ## Fonctionnalités
 
-### KYC
-
-### Dashboard
-
-### Feed
-
-### Explorer
-
-### Chat
+### Authentication & KYC
 
 ### Boutique
 
+### Chat
+
 ### Communautés
-
-### Panier
-
-### Wallet
 
 ### Comparateur
 
+### Dashboard
+
+### Explorer
+
+### Feed
+
 ### Liste d'abonnés et d'abonnements
+
+### Panier
 
 ### Publication de réels et stories
 
 ### Systéme de promotion et de ads pour les produits à vendre
+
+### Wallet
