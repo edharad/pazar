@@ -60,7 +60,7 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 
 ### 1. Webapp taille desktop UX/UI
 
-#### 1.1. Landing page via URL (ex: pazar.com) = GET('/')
+#### 1.1. Landing page via URL (ex: pazar.com)
 
 ##### 1.1.1 Landing page - Interface (UI)
 
@@ -76,8 +76,13 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 
 Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone sur le formulaire de l'interface de la landing page. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple. Ici nous partons du principe que celui-ci a appuyé sur le bouton:
 
-🔴 ==S'INSCRIRE====> /FORMULAIRE D'INSCRIPTION SIMPLE ✅
-               ====> /ERREUR 404;
+```javascript
+if(success) {
+    return SignupForm;
+} else {
+    return error; 
+}
+```
 
 ##### 1.2.1. Formulaire d'inscription simple
 
