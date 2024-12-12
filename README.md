@@ -30,7 +30,7 @@ Le présent fichier (README) fait office de journal de bord afin de présenter l
 
 ## User Experience (UX) & User Interface (UI)
 
-### Introduction WebApp UX/UI
+### Introduction UX/UI
 
 L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'application est lancée. Ici, nous allons différencier 3 versions d'application. Webapp, iOS et android. D'autres versions pourront être développées ultérieurement. Elles partageront les mêmes données mais il y aura quelques différences en termes d'interface. Ces aspects seront clarifiés dans les explications relatives à l'UI.
 
@@ -53,7 +53,7 @@ La webapp se distingue en 3 tailles et pour chacune des tailles, la dispositon e
 }
 ```
 
-Le rendu en fonction des tailles ne devrait pas radicalement différer entre la version webapp taille mobile et la version mobile de l'application. Par conséquent, ici nous allons aborder chaque étape de l'expérience utilisateur en partant initialement de son inscription jusqu'à l'utilisation de chaque fonctionnalité de l'application pour chaque version de l'application. A savoir les versions webapp, mobile et tablette. Bien qu'il n'y ait pas trop de différences, nous souhaitons tout de même présenter les éléments suivants:
+Le rendu en fonction des tailles ne devrait pas radicalement différer entre la version webapp taille mobile et la version mobile de l'application. Par conséquent, lorsqu'il y aura une différence entre les deux nous la mentionnerons directement en image et textuellement. Ici nous allons d'abord aborder chaque étape de l'expérience utilisateur en partant initialement de son inscription jusqu'à l'utilisation de chaque fonctionnalité de l'application pour chaque version de l'application. A savoir les versions webapp, mobile et tablette. Bien qu'il n'y ait pas trop de différences, nous souhaitons tout de même présenter les éléments suivants:
 
 - Une maquette de l'interface développée sur figma sera jointe au point.
 - Explication de l'expérience de l'utilisateur avec chaque élément de l'interface.
@@ -61,21 +61,19 @@ Le rendu en fonction des tailles ne devrait pas radicalement différer entre la 
 
 Aussi pour faciliter les choses nous allons à chaque fois montrer la différence en terme de rendu, si il y en a, de la dipositiond des éléments en fonction de la taille.
 
-#### Important
+### Important
 
 Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
 
-#### 1. Landing page via URL
+### 1. Landing
 
 --> IMAGE LANDING PAGE WEB DESKTOP, MOBILE, TABLETTE
 
----
-
-#### 2. Inscription et connexion
+### 2. Inscription et connexion
 
 Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone sur le formulaire de l'interface de la landing page. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple.
 
-##### 2.1. Formulaire d'inscription simple
+#### 2.1. Formulaire d'inscription simple
 
 --> IMAGES DE L'INTERFACE FORMULAIRE INSCRIPTION
 
@@ -146,7 +144,9 @@ Durant cette étape, lui sont proposées des catégories de produits ou des cent
 
 Cette étape précède la finalisation de l'inscription et demande à l'utilisateur s'il souhaite activer l'authentification à deux facteurs pour des raisons de sécurité. S'il souhaite le faire, il peut choisir de le faire via application d'authentication, numéro de téléphone. Il peut également choisir de le faire de façon biométrique. Il peut accepter et configurer ou refuser et passer à la suite.
 
-#### 3. Layout global
+### 3. Layout global
+
+#### Introduction layout global
 
 --> IMAGES DU LAYOUT GLOBAL ACCUEIL (desktop, tablette, mobile)
 --> IMAGES DU LAYOUT DE LA VERSION MOBILE ET DIFFERENCES AVEC WEBAPP MOBILE
@@ -177,7 +177,7 @@ Ci-dessous une liste simplifiée des sections visibles et invisibles en fonction
 | SearchBar     | ❌                    | ❌                           | ✔️               |
 | Suggest Sec   | ✔️                     | ❌                           | ❌              |
 
-##### 3.1. Navbar menu
+#### 3.1. Navbar menu
 
 La navbar est un élément du layout qui est essentiel pour la navigation de l'utilisateur. Les éléments du menu sont listés dans le tableau ci-dessous. Comme vous pouvez le voir, certains éléments sont visibles et d'autres ne le sont pas suivant la taille de l'écran. Les points suivants expliqueront de quelle façon sont disposés les éléments du menu suivant l'écran.
 
@@ -199,7 +199,7 @@ La navbar est un élément du layout qui est essentiel pour la navigation de l'u
 | Paramètres    | ✔️                     | ❌                           | ❌              |
 | Titles        | ✔️                     | ❌                           | ❌              |
 
-###### 3.1.1. Taille desktop
+##### 3.1.1. Taille desktop
 
 --> IMAGE DE LA DISPOSITION DE LA NAVBAR EN TAILLE DESKTOP
 
@@ -229,21 +229,21 @@ Proche du bord inférieur, le menu hamburger qui une fois cliquée affiche un me
 - (Icone d'activité)   Votre activité
 - (Icone lune)         Changer de thème
 
-###### 3.1.2. Taille tablette
+##### 3.1.2. Taille tablette
 
 --> IMAGE DE LA DISPOSITION DE LA NAVBAR EN TAILLE TABLETTE
 
-##### 3.2. Section principale
+#### 3.2. Section principale
 
 L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où, de la même façon que sur instagram, s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize et qui prend en compte une multitude de parametres liés à l'utilisateur.
 
 Comme l'utilisateur n'a pas d'abonnés ni d'abonnements, l'utilisateur a la possibilité, grâce à l'apparition d'un component situé sur la partie superieur de la section où se situe le feed, qui contient du texte informant de la possibilité de s'abonner à d'autres utlisateurs ou d'inviter ses contacts, d'appuyer sur un bouton afin de trouver des ami(e)s. En cliquant sur le bouton il peut accéder à une partie de l'app où s'affiche une liste d'utilisateurs en fonction du système de suggestion. d'ajouter des ami(e)s qui lui sont suggerés en fonction des données transmises ou du système de suggestion, qu'il faudra également configuré. Mais il peut également inviter ses contacts à rejoindre l'application.
 
-##### 3.4. Section secondaire
+#### 3.3. Section secondaire
 
 Suggestions d'amis, de communautés
 
-#### 4. Layout spécifique à chaque élément du menu
+### 4. Layout spécifique à chaque élément du menu
 
 ## Fonctionnalités
 
