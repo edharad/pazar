@@ -90,55 +90,55 @@ Suite à la demande d'inscription, l'utilisateur
 
 Lorsqu'il a terminé d'entrer toutes infromations il passe à la suite en envoyant ses donnés via le bouton.
 
-##### 2.2. Validation avec code reçu
+#### 2.2. Validation avec code reçu
 
 --> IMAGE DE L'INTERFACE VALIDATION CODE
 
 Un mail ou un sms, en fonction de ce qu'il a entré, lui est envoyé avec un code de vérification afin de finaliser cette première inscription dans l'écosystème et activer le compte. L'utilisateur est face à un component qui lui demande d'entrer le code. Lorsque le code est entré, cette phase de l'inscription est terminée et on peut passer à la suite. A cette étape, nous avons dores et déjà des données sur cet utilisateur confirmé. L'adresse email et/ou le numéro de téléphone.
 
-##### 2.3. KYC - Procédure complète
+#### 2.3. KYC - Procédure complète
 
 INFORMATION : il est possible que pour le KYC l'application fasse appel à un service tiers déjà programmé.
 
-###### 2.3.1. KYC - INFORMATIONS ET CONDITIONS DU KYC
+##### 2.3.1. KYC - INFORMATIONS ET CONDITIONS DU KYC
 
 --> IMAGE DE LA PREMIÈRE ÉTAPE DU KYC INFORMATIONS ET CONDITIONS DU KYC
 
 C'est un point central de l'application car ce processus doit être rapide et facile pour l'utilisateur. Autrement dit très pédagogique. Cette partie est très semblable à ce que l'on retrouve sur les plateformes de trading de cryptomonnaies telles que binance ou kraken. L'utilisateur est face à un component qui l'informe que Pazar a pour but de mettre à disposition de ses utilisateurs un réseau social commercial afin que les utilisateurs puissent acheter et vendre de façon sécurisée et vérifiée. Par conséquent, il est essentiel que chaque utilisateur vérifie son identité. Un lien vers la politique de confidentialité est présent afin que les utilisateurs sache de quelle façon les données sont traitées.
 
-###### 2.3.2. KYC - FORMULAIRE D'INSCRIPTION COMPLET
+##### 2.3.2. KYC - FORMULAIRE D'INSCRIPTION COMPLET
 
 --> IMAGE DE LA DEUXIÈME ETAPE DU KYC > FORMULAIRE
 
 L'utilisateur arrive face à un componant qui contient un formulaire muni d'un bouton suivant. Ce formulaire est la première étape du KYC, si il n'est pas dûment rempli, l'utilisateur ne peut pas poursuivre en cliquant sur le bouton suivant et un message d'erreur demandant de remplir correctement le formulaire s'affiche. Tous les champs sont obligatoires initialement. Il est demandé au client de remplir le formulaire dans lequel les champs sont les suivants : nom et prénoms (au pluriel) tels qu'inscrits sur sa carte d'identité ou permis de conduire, son pays de résidence, son adresse, code postale, ville et numero de téléphone.
 Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l'étape du processus d'inscription a lieu et si il revient sur l'appli, il pourra poursuivre son inscription où il en était avec un message qui lui dira "Vous êtes de retour pour finaliser votre inscription etc...".
 
-###### 2.3.3. KYC - UPLOAD ID CARD OR LICENSE
+##### 2.3.3. KYC - UPLOAD ID CARD OR LICENSE
 
 --> IMAGE DE LA TROISIÈME ETAPE DU KYC - UPLOAD DE L'ID
 
 L'utilisateur arrive sur un component qui lui demande de upload une photo de sa carte d'identité nationale ou de son permis de conduire, recto et verso. Une fois cela fait il peut cliquer sur le bouton suivant.
 
-###### 2.3.4. KYC - UPLOAD OFFICAL DOCUMENT & ADRESS VERIFICATION
+##### 2.3.4. KYC - UPLOAD OFFICAL DOCUMENT & ADRESS VERIFICATION
 
 --> IMAGE DE LA QUATRIÈME ETAPE DU KYC - UPLOAD DE DOCUMENT OFFICIEL
 
 L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur la webapp, il lui est demandé de fournir la copie d'un document officiel qui prouve qu'il est bien le détenteur de cette identité. Cela n'aura pas lieu sur la version mobile ou si la webapp est sur un navigateur sur mobile ou tablette car la reconnaissance faciale prendra le relai à cette étape là. Donc j'imagine que sur la version webapp desktop, ne seront acceptées que les factures de téléphone ou une facture de l'assurance maladie.
 
-###### 2.3.5. KYC - VERIFICATION EN COURS
+##### 2.3.5. KYC - VERIFICATION EN COURS
 
 --> IMAGE DE LA CINQUIÈME ÉTAPE DU KYC - VÉRIFICATION ET REDIRECTION
 
 L'utilisateur est maintenant face à un component qui charge afin de lui montrer que l'anayse de sa procédure de KYC est en cours. Si il y a une erreur l'état du component change et mentionne à l'utilisateur ce qui ne va pas. Un bouton apparait afin de corriger le point si cela est possible. Si c'est possible, l'utilisateur retourne à l'étape du KYC, clique sur suivant et arrive directement à l'étape suivante qu'il faut corriger ou à la fin de la procédure de KYC où l'analyse a lieu si il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
 En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur est redirigé automatiquement vers l'étape du choix des centres d'intérets.
 
-##### 2.4. Centres d'intérêts
+#### 2.4. Centres d'intérêts
 
 --> IMAGE DE L'INTERFACE AFFICHANT LE COMPONENT CENTRE D'INTÉRETS
 
 Durant cette étape, lui sont proposées des catégories de produits ou des centres d'intérêts. Par exemple, il peut y avoir le sport, le fitness, les automobiles, la construction, les biens immobiliers etc. Le choix de ces centres d'intérêts se devra d'être au minimum de 5 obligatoires. Cette étape est cruciale afin d'initialiser le feed. Bien entendu le système de recommandation étant bien plus technique et dynamique que cela, le contenu du feed dépendera de bien plus de facteurs que ce qu'il aura choisi comme centres d'intérêts. Nous nous y attarderons dans le point spécifique au développement du feed et de l'intégration du système de recommandation.
 
-##### 2.5. Activation de l'authentification à 2 facteurs (2FA) ou authentication biométrique
+#### 2.5. Activation de l'authentification à 2 facteurs (2FA) ou authentication biométrique
 
 --> IMAGE DE L'INTERFACE AFFICHANT LA PROPOSITION D'ACTIVATION DE L'AUTHENTIFICATION A DEUX FACTEURS
 
