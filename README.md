@@ -38,17 +38,17 @@ Par conséquent, ici nous allons aborder chaque étape de l'expérience utilisat
 
 Pour chaque étape de l'expérience utilisateur :
 
-- Description de l'interface utilisateur qui trouvera une maquette annexée qui sera développée sur figma.
+- Description de l'interface utilisateur qui trouvera une maquette annexée qui sera développée sur figma. Chaque component des interfaces sera décrit et nommé dans la partie UI des différents points.
 - Explication de l'expérience de l'utilisateur avec chaque élément de l'interface
-- Description des déclencheurs (clique bouton ou autre évènement) qui modifieront l'état ou feront basculer l'interface
+- Description et explicaiton des déclencheurs (clique bouton ou autre évènement), qui font la redirection ou qui font induisent un changement d'état de l'interface.
 - Les changements ou redirections en cas de succès de l'utilisation de la fonctionnalité utilisée
 - Les changements ou redirections en cas d'erreur
 
-Informations importantes :
+**Informations importantes :**
 
-- Les triggers liés à l'interaction de l'utilisateur seront mentionné de la façon suivante : ==CLIQUE BOUTON==
-- Les redirections seront mentionnées de la façon suivante : ==>SECTION, ==>PAGE/URL
-- Les events différents seront mentionnés de la façon suivante :
+- Les triggers liés à l'interaction de l'utilisateur seront mentionné de la façon suivante : **==CLIQUE BOUTON==**
+- Les redirections seront mentionnées de la façon suivante : **==>SECTION, ==>PAGE/URL**
+- Les autres events seront mentionnés de la façon suivante :
 
 Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
 
@@ -58,15 +58,35 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 
 ##### 1.1.1 Interface de la landing page (UI)
 
-L'utilisateur arrive sur une interface où il lui est demandé de s'inscrire ou de se connecter. S'il choisit de s'inscrire il passe par le processus d'inscription. S'il choisit de se connecter, il arrive dans le processus de connexion. Il faut savoir que pour l'un ou pour l'autre nous pourrions faire appel à un service tiers pour l'authentication ou le configurer nous même.
+La landing page de la webapp se distingue en 3 tailles et pour chacune des tailles, la dispositon et la visibilité des composants seront différentes pour des question de responsive. Par conséquent, il sera nécessaire de montrer où se trouvent les composants en fonction de chaque taille pour chaque situation. Les tailles en question sont les suivantes :
+
+1. Une taille desktop: ≥ 1025px
+2. Une taille tablette: ≥ 481px && ≤ 1024px
+3. Une taille mobile: ≤ 480px
+
+Comme dit préalablement, chaque interface utilisateur sera expliqué au moyen d'une maquette qui aura été crée sur figma.
+
+###### 1.1.1.1 Landing page taille desktop
+
+###### 1.1.1.2 Landing page taille tablette
+
+###### 1.1.1.3 Landing page taille mobile
 
 ##### 1.1.2 Expérience de l'utilisateur avec la landing page (UX)
 
-##### 1.2 Inscription
+L'utilisateur a 3 options majeures sur la landing page:
 
-Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu tel qu'un clique sur un bouton par exemple. Ainsi, les évènements seront mentionnés de la façon suivante : ==EVENT==
+1. Se connecter
+2. S'inscrire
+3. Accéder au menu du footer qui amène vers des informations concernant l'application. Notamment, la politique des données et des cookies, la confidentialité.
 
-##### 1.2. Formulaire d'inscription simple
+##### 1.1.3 Description et explication des déclencheurs
+
+#### 1.2 Inscription
+
+Lors de la première partie de l'inscription, l'utilisateur pourra passer directement par une inscription par email ou numero de téléphone. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple.
+
+##### 1.2.1. Formulaire d'inscription simple
 
 - Adresse email ou numéro de téléphone (Numéro reconnu selon le lieu de connexion. Choix de l'indicatif si nécessaire)
 - Nom
@@ -80,13 +100,13 @@ Lors de la première partie de l'inscription, l'utilisateur pourra passer direct
 
     ==CLIQUE BOUTON SUIVANT==
 
-##### 1.3. Validation avec code reçu
+##### 1.2.2. Validation avec code reçu
 
 Un mail ou un sms, en fonction de ce qu'il a entré, lui est envoyé avec un code de vérification afin de finaliser cette première inscription dans l'écosystème et activer le compte. L'utilisateur est face à un component qui lui demande d'entrer le code. Lorsque le code est entré, cette phase de l'inscription est terminée et on peut passer à la suite. A cette étape, nous avons dores et déjà des données sur cet utilisateur confirmé. L'adresse email et/ou le numéro de téléphone.
 
     ==CLIQUE BOUTON VALIDATION===
 
-##### 1.4. KYC Procedure
+##### 1.2.3. KYC Procedure
 
 C'est un point central de l'application car ce processus doit être rapide et facile pour l'utilisateur. Autrement dit très pédagogique. Cette partie est très semblable à ce que l'on retrouve sur les plateformes de trading de cryptomonnaies telles que binance ou kraken. L'utilisateur est face à un component qui l'informe que Pazar a pour but de mettre à disposition de ses utilisateurs un réseau social commercial afin que les utilisateurs puissent acheter et vendre de façon sécurisée et vérifiée. Par conséquent, il est essentiel que chaque utilisateur vérifie son identité. Un lien vers la politique de confidentialité est présent afin que les utilisateurs sache de quelle façon les données sont traitées.
 
@@ -94,18 +114,21 @@ C'est un point central de l'application car ce processus doit être rapide et fa
 
 1. L'utilisateur arrive face à un componant qui contient un formulaire muni d'un bouton suivant. Ce formulaire est la première étape du KYC, si il n'est pas dûment rempli, l'utilisateur ne peut pas poursuivre en cliquant sur le bouton suivant et un message d'erreur demandant de remplir correctement le formulaire s'affiche. Tous les champs sont obligatoires initialement. Il est demandé au client de remplir le formulaire dans lequel les champs sont les suivants : nom et prénoms (au pluriel) tels qu'inscrits sur sa carte d'identité ou permis de conduire, son pays de résidence, son adresse, code postale, ville et numero de téléphone.
 Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l'étape du processus d'inscription a lieu et si il revient sur l'appli, il pourra poursuivre son inscription où il en était avec un message qui lui dira "Vous êtes de retour pour finaliser votre inscription etc...".
+
     ==CLIQUE BOUTON SUIVANT==
 
 2. L'utilisateur arrive sur un component qui lui demande de upload une photo de sa carte d'identité nationale ou de son permis de conduire, recto et verso. Une fois cela fait il peut cliquer sur le bouton suivant.
+
     ==CLIQUE BOUTON SUIVANT==
 
 3. Après le clique, l'analyse KYC a lieu. Ici, il y aura deux options; coder soi-même la procédure de KYC ou implementer un service tiers pour faire la vérification. Je pense quie la deuxième option sera plus viable sachant que les services tiers font déjà le travail en fonction de chaque pays. L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur ordinateur, il lui est demandé de fournir la copie d'un document officiel qui prouve qu'il est bien le détenteur de cette identité. Cela n'aura pas lieu sur la version mobile car la reconnaissance faciale prendra le relai à cette étape là. Donc j'imagine que sur la version webapp, ne seront accepté que les factures de téléphone ou une facture de l'assurance maladie.
+
     ==CLIQUE BOUTON SUIVANT==
 
 4. L'utilisateur est maintenant face à un component qui charge afin de lui montrer que l'anayse de sa procédure de KYC est en cours. Si il y a une erreur l'état du component change et mentionne à l'utilisateur ce qui ne va pas. Un bouton apparait afin de corriger le point si cela est possible. Si c'est possible, l'utilisateur retourne à l'étape du KYC, clique sur suivant et arrive directement à l'étape suivante qu'il faut corriger ou à la fin de la procédure de KYC où l'analyse a lieu si il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
 En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur arrive automatiquement sur l'accueil et l'inscription est finalisée.
 
-##### 1.5. Accueil (Feed)
+#### 1.3. Accueil (Feed)
 
 Avant tout, il faut savoir que cette interface est très importante. Il y a un component navigation (menu) disposé de façon vertiacle et qui contient des cliquables afin de pouvoir passer à d'autres parties de l'applications. En vrai, cela s'affiche de la façon suivant lorsque la fenêtre est suffisamment large. On y voit le logo en haut de la bande verticale. En dessous du logo dans cet ordre :
 
@@ -113,7 +136,10 @@ Avant tout, il faut savoir que cette interface est très importante. Il y a un c
 - (Icone globe) Explorer
 - (Icone Boutique) Boutique
 - (Icone avion papier) Messagerie
-- (Icone profile) P
+- (Icone profile) Profile
+- (Icone communauté) Communautés
+- (Icon notification) Notifications
+- (Icone paramètres) Paramètres
 
 L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où, de la même façon que sur instagram, s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize et qui prend en compte une multitude de parametres liés à l'utilisateur.
 
