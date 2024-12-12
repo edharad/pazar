@@ -1,12 +1,12 @@
 # Pazar 1.0.0
 
-## Présentation du projet
+## Présentation
 
 L'objectif de l'application "Pazar" est de fournir une place de marché en ligne sécurisée pour le commerce entre particuliers. Notamment la vente et l'achat de biens entre particuliers. Cette place de marché se présente sous la forme d'un réseau social semblable aux applications déjà existantes. Cependant, tous les utilisateurs doivent passer une procédure de vérification d'identité (KYC) afin de vendre ou d'acheter des produits sur la plateforme. Cette procédure est semblable à celle des applications de trading de cryptomonnaie. L'application répond au besoin croissant de garantir la sécurité des achats et des ventes au sein de relations commerciales de tout type (C2C, B2C, B2B, etc.). Pazar souhaite s'étendre globalement dans le monde afin de promouvoir les circuits économiques courts.
 
 Pazar sera une application multiplatformes que l'on pourra retrouver en tant que webapp avec accès par URL, en application mobile et tablette pour les iOS, Android etc, et d'autres supports si cela est intéressant pour l'expansion du projet.
 
-### Dans ce fichier sont présentés (non exhaustif)
+### Liste non exhaustive des points abordés dans ce document
 
 - L'utilisation dynamique du fichier README en tant que journal de bord
 - Les fonctionnalités de l'application
@@ -18,7 +18,7 @@ Pazar sera une application multiplatformes que l'on pourra retrouver en tant que
 - L'UX/UI
 - Les services tiers
 
-## Journal de bord
+## README = Journal de bord
 
 Le présent fichier (README) fait office de journal de bord afin de présenter les fonctionnalités de l'application, mais aussi avoir un suivi sur son développement, son déploiement, sa maintenance, sa gestion et sa mise à jour. Des fichiers annexes tels que CONTRIBUTING.md, CHANGELOG.md, ROADMAP.md seront également crées et mis à jour en fonction de l'avancée du projet. README sera le fichier de référence pour l'ensemble de l'application car il permet d'être versionné et d'être consulté de façon dynamique.
 
@@ -30,7 +30,7 @@ Le présent fichier (README) fait office de journal de bord afin de présenter l
 
 ## Technologies, frameworks, languages, services tiers
 
-## User Experience (UX) et User Interface (UI)
+## User Experience (UX) & User Interface (UI)
 
 L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'application est lancée. Ici, nous allons différencier 3 versions d'application. Webapp, iOS et android. D'autres versions pourront être développées ultérieurement. Elles partageront les mêmes données mais il y aura quelques différences en termes d'interface. Ces aspects seront clarifiés dans les explications relatives à l'UI.
 
@@ -44,7 +44,11 @@ Pour chaque étape de l'expérience utilisateur :
 - Les changements ou redirections en cas de succès de l'utilisation de la fonctionnalité utilisée
 - Les changements ou redirections en cas d'erreur
 
-Information importante, tous les triggers sont mentionnés de la façon suivante : ==EVENT==
+Informations importantes :
+
+- Les triggers liés à l'interaction de l'utilisateur seront mentionné de la façon suivante : ==CLIQUE BOUTON==
+- Les redirections seront mentionnées de la façon suivante : ==>SECTION, ==>PAGE/URL
+- Les events différents seront mentionnés de la façon suivante :
 
 Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
 
@@ -57,8 +61,6 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 L'utilisateur arrive sur une interface où il lui est demandé de s'inscrire ou de se connecter. S'il choisit de s'inscrire il passe par le processus d'inscription. S'il choisit de se connecter, il arrive dans le processus de connexion. Il faut savoir que pour l'un ou pour l'autre nous pourrions faire appel à un service tiers pour l'authentication ou le configurer nous même.
 
 ##### 1.1.2 Expérience de l'utilisateur avec la landing page (UX)
-
-
 
 ##### 1.2 Inscription
 
@@ -84,14 +86,15 @@ Un mail ou un sms, en fonction de ce qu'il a entré, lui est envoyé avec un cod
 
 ==CLIQUE BOUTON VALIDATION===
 
-##### 1.4. KYC
+##### 1.4. KYC Procedure
 
 C'est un point central de l'application car ce processus doit être rapide et facile pour l'utilisateur. Autrement dit très pédagogique. Cette partie est très semblable à ce que l'on retrouve sur les plateformes de trading de cryptomonnaies telles que binance ou kraken. L'utilisateur est face à un component qui l'informe que Pazar a pour but de mettre à disposition de ses utilisateurs un réseau social commercial afin que les utilisateurs puissent acheter et vendre de façon sécurisée et vérifiée. Par conséquent, il est essentiel que chaque utilisateur vérifie son identité. Un lien vers la politique de confidentialité est présent afin que les utilisateurs sache de quelle façon les données sont traitées.
+
 ==CLIQUE BOUTON SUIVANT==
 
 1. L'utilisateur arrive face à un componant qui contient un formulaire muni d'un bouton suivant. Ce formulaire est la première étape du KYC, si il n'est pas dûment rempli, l'utilisateur ne peut pas poursuivre en cliquant sur le bouton suivant et un message d'erreur demandant de remplir correctement le formulaire s'affiche. Tous les champs sont obligatoires initialement. Il est demandé au client de remplir le formulaire dans lequel les champs sont les suivants : nom et prénoms (au pluriel) tels qu'inscrits sur sa carte d'identité ou permis de conduire, son pays de résidence, son adresse, code postale, ville et numero de téléphone.
 Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l'étape du processus d'inscription a lieu et si il revient sur l'appli, il pourra poursuivre son inscription où il en était avec un message qui lui dira "Vous êtes de retour pour finaliser votre inscription etc...".
-==CLIQUE BOUTON SUIVANT==
+**==CLIQUE BOUTON SUIVANT==**
 
 2. L'utilisateur arrive sur un component qui lui demande de upload une photo de sa carte d'identité nationale ou de son permis de conduire, recto et verso. Une fois cela fait il peut cliquer sur le bouton suivant.
 ==CLIQUE BOUTON SUIVANT==
