@@ -74,9 +74,10 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 
 #### 1.2. Inscription
 
-Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone sur le formulaire de l'interface de la landing page. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple. Ici nous partons du principe que celui-ci a appuyé sur le bouton: 
+Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone sur le formulaire de l'interface de la landing page. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple. Ici nous partons du principe que celui-ci a appuyé sur le bouton:
 
-==S'INSCRIRE== => /FORMULAIRE D'INSCRIPTION SIMPLE
+🔴 ==S'INSCRIRE====> /FORMULAIRE D'INSCRIPTION SIMPLE ✅
+               ====> /ERREUR 404;
 
 ##### 1.2.1. Formulaire d'inscription simple
 
@@ -92,13 +93,13 @@ Suite à la demande d'inscription, l'utilisateur
 
 (Une info est présente sur un component où il doit cocher qui stipule qu'en s'inscrivant, il accepte nos conditions générales d'utilisation et la politique de confidentialité)
 
-<span style="color: blue;">==CLIQUE BOUTON SUIVANT== ==> /INSERTION DU CODE REÇU PAR SMS OU EMAIL</span>
+⭕️🔴 ==CLIQUE BOUTON SUIVANT== ==> /INSERTION DU CODE REÇU PAR SMS OU EMAIL
 
 ##### 1.2.2. Validation avec code reçu
 
 Un mail ou un sms, en fonction de ce qu'il a entré, lui est envoyé avec un code de vérification afin de finaliser cette première inscription dans l'écosystème et activer le compte. L'utilisateur est face à un component qui lui demande d'entrer le code. Lorsque le code est entré, cette phase de l'inscription est terminée et on peut passer à la suite. A cette étape, nous avons dores et déjà des données sur cet utilisateur confirmé. L'adresse email et/ou le numéro de téléphone.
 
-    ==CLIQUE BOUTON VALIDATION===
+⭕️🔴 ==CLIQUE BOUTON VALIDATION===
 
 ##### 1.2.3. KYC Procedure
 
