@@ -36,9 +36,24 @@ L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'a
 
 La webapp se distingue en 3 tailles et pour chacune des tailles, la dispositon et la visibilité des composants seront différentes pour des question de responsive. Par conséquent, il sera nécessaire de montrer où se trouvent les composants en fonction de chaque taille pour chaque situation. Les tailles en question sont les suivantes :
 
-- Une taille desktop: ≥ 1025px
-- Une taille tablette: ≥ 481px && ≤ 1024px
-- Une taille mobile: ≤ 480px
+#### Tailles d'écran ou de fenêtres
+
+```css
+/* Mobile */
+@media (max-width: 480px) {
+  /* Styles pour petits mobiles */
+}
+
+/* Tablette */
+@media (min-width: 481px) and (max-width: 1024px) {
+  /* Styles pour tablettes */
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  /* Styles pour desktops */
+}
+```
 
 Le rendu en fonction des tailles ne devrait pas radicalement différer entre la version webapp taille mobile et la version mobile de l'application. Par conséquent, ici nous allons aborder chaque étape de l'expérience utilisateur en partant initialement de son inscription jusqu'à l'utilisation de chaque fonctionnalité de l'application pour chaque version de l'application. A savoir les versions webapp, mobile et tablette. Bien qu'il n'y ait pas trop de différences, nous souhaitons tout de même présenter les éléments suivants:
 
@@ -56,7 +71,9 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 
 --> IMAGE LANDING PAGE WEB DESKTOP, MOBILE, TABLETTE
 
-### 2. Inscription
+---
+
+### 2. Inscription et connexion
 
 Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone sur le formulaire de l'interface de la landing page. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple.
 
@@ -73,8 +90,9 @@ Suite à la demande d'inscription, l'utilisateur
 - Pays de résidence
 - Nom d'utilisateur (avec proposition d'alternative)
 - Mot de passe avec conditions (ex: nombre de caractères minimum, chiffres, majuscules, minuscules). Il doit pouvoir enregistrer le mot de passe si il le souhaite et l'authentification à deux facteurs, avec envoie du code par sms ou par email a lieu d'office. Sur mobile, il pourra choisir de se connecter de façon biometrique. Sur ordinateur aussi mais c'est une fonctionnalité propre a la reconnaissance digital sur macbook par exemple.
+- Une case à cocher qui stipule que l'utilisateur accepte nos conditions d'utilisation, notre charte de confidentialité et notre politique des données. Il peut les consulter en cliquant dessus.
 
-(Une info est présente sur un component où il doit cocher qui stipule qu'en s'inscrivant, il accepte nos conditions générales d'utilisation et la politique de confidentialité)
+Lorsqu'il a terminé d'entrer toutes infromations il passe à la suite en envoyant ses donnés via le bouton.
 
 #### 2.2. Validation avec code reçu
 
@@ -82,7 +100,7 @@ Suite à la demande d'inscription, l'utilisateur
 
 Un mail ou un sms, en fonction de ce qu'il a entré, lui est envoyé avec un code de vérification afin de finaliser cette première inscription dans l'écosystème et activer le compte. L'utilisateur est face à un component qui lui demande d'entrer le code. Lorsque le code est entré, cette phase de l'inscription est terminée et on peut passer à la suite. A cette étape, nous avons dores et déjà des données sur cet utilisateur confirmé. L'adresse email et/ou le numéro de téléphone.
 
-#### 2.3. KYC - ALL PROCEDURE
+#### 2.3. KYC - Procédure complète
 
 INFORMATION : il est possible que pour le KYC l'application fasse appel à un service tiers déjà programmé.
 
@@ -116,35 +134,88 @@ L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur la webapp, i
 --> IMAGE DE LA CINQUIÈME ÉTAPE DU KYC - VÉRIFICATION ET REDIRECTION
 
 L'utilisateur est maintenant face à un component qui charge afin de lui montrer que l'anayse de sa procédure de KYC est en cours. Si il y a une erreur l'état du component change et mentionne à l'utilisateur ce qui ne va pas. Un bouton apparait afin de corriger le point si cela est possible. Si c'est possible, l'utilisateur retourne à l'étape du KYC, clique sur suivant et arrive directement à l'étape suivante qu'il faut corriger ou à la fin de la procédure de KYC où l'analyse a lieu si il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
-En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur est redirigé automatiquement sur l'accueil et l'inscription est finalisée.
+En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur est redirigé automatiquement vers l'étape du choix des centres d'intérets.
 
-### 3. Accueil (Feed)
+#### 2.4. Centres d'intérêts
 
---> IMAGE DE L'INTERFACE DE L'ACCUEIL
+--> IMAGE DE L'INTERFACE AFFICHANT LE COMPONENT CENTRE D'INTÉRETS
 
-Comme on peut le constater sur l'image pour la taille desktop, on retrouve dans la navbar verticale située à gauche, des éléments de menus qui nous permettent de naviguer sur Pazar. En dessous du nom de l'application, il y a les éléments de menu suivant.
+Durant cette étape, lui sont proposées des catégories de produits ou des centres d'intérêts. Par exemple, il peut y avoir le sport, le fitness, les automobiles, la construction, les biens immobiliers etc. Le choix de ces centres d'intérêts se devra d'être au minimum de 5 obligatoires. Cette étape est cruciale afin d'initialiser le feed. Bien entendu le système de recommandation étant bien plus technique et dynamique que cela, le contenu du feed dépendera de bien plus de facteurs que ce qu'il aura choisi comme centres d'intérêts. Nous nous y attarderons dans le point spécifique au développement du feed et de l'intégration du système de recommandation.
+
+#### 2.5. Activation de l'authentification à 2 facteurs (2FA) ou authentication biométrique
+
+--> IMAGE DE L'INTERFACE AFFICHANT LA PROPOSITION D'ACTIVATION DE L'AUTHENTIFICATION A DEUX FACTEURS
+
+Cette étape précède la finalisation de l'inscription et demande à l'utilisateur s'il souhaite activer l'authentification à deux facteurs pour des raisons de sécurité. S'il souhaite le faire, il peut choisir de le faire via application d'authentication, numéro de téléphone. Il peut également choisir de le faire de façon biométrique. Il peut accepter et configurer ou refuser et passer à la suite.
+
+### 3. Layout global
+
+--> IMAGE DU LAYOUT GLOBAL ACCUEIL
+
+Le layout global fait référence à la dispostion des éléments graphique de l'UI lorsque l'utilisateur a terminé son inscription ou qu'il s'est connecté à son compte. Ce layout sera différent en fonction de la taille de la fenêtre ou du media. C'est à dire que les éléments de l'application ne seront pas disposés de la même façon si nous sommes sur une taille mobile ou une taille ordinateur de bureau ou laptop. Certains éléments seront également visibles sur desktop et invisibles sur mobiles.
+
+#### 3.1. Navbar menu
+
+La navbar est un élément du layout qui est essentiel pour la navigation de l'utilisateur. C'est pour cela que le tableau ci-dessous résume résume ce qui est visible selon la taille de l'écran.
+
+| Menu items    | Desktop ≥ 1025px      | Tablette ≥ 481px && ≤ 1024px | Mobile ≤ 480px  |
+| ------------- | --------------------- | ---------------------------- | --------------- |
+| Logo textuel  | ✔️                     | ✔️                            | ❌              |
+| Logo appli    | ❌                    | ✔️                            | ❌              |
+| Accueil       | ✔️                     | ✔️                            | ✔️               |
+| Recherche     | ✔️                     | ✔️                            | ✔️               |
+| Explorer      | ✔️                     | ✔️                            | ✔️               |
+| Boutique      | ✔️                     | ✔️                            | ✔️               |
+| Panier        | ✔️                     | ✔️                            | ✔️               |
+| Messages      | ✔️                     | ✔️                            | ✔️               |
+| Dashboard     | ✔️                     | ✔️                            | ✔️               |
+| Communautés   | ✔️                     | ✔️                            | ✔️               |
+| Notifications | ✔️                     | ✔️                            | ✔️               |
+| Créer         | ✔️                     | ✔️                            | ✔️               |
+| Profil        | ✔️                     | ✔️                            | ✔️               |
+| Paramètres    | ✔️                     | ❌                           | ❌              |
+| Titles        | ✔️                     | ❌                           | ❌              |
+
+
+##### 3.1.1. Taille desktop
+
+--> IMAGE DE LA DISPOSITION DE LA NAVBAR EN TAILLE DESKTOP
+
+Comme on peut le constater sur l'image pour la taille desktop, on retrouve la navbar disposée verticalement et située à gauche. C'est une side nav bar. On y trouve les icones de menus ainsi que les titres qui forments des éléments cliquables qui nous permettent de naviguer sur Pazar.
+
+La diposition est la suivante :
+
+Titre de l'application (image du logo textuel)
+--espace--
 
 - (Icone maison)       Accueil
 - (Icone loupe)        Recherche
 - (Icone globe)        Explorer
 - (Icone Boutique)     Boutique
-- (Icone avion papier) Messagerie
-- (Icone profile)      Profile
+- (Icone Panier)       Panier
+- (Icone avion papier) Messages
+- (Icone de moniteur)  Dashboard
 - (Icone communauté)   Communautés
 - (Icon notification)  Notifications
-- (Icone paramètres)   Paramètres
+- (Icone paramètres)   Créer
+- (Icone profile)      Profil
+
+--espace--
+Proche du bord inférieur, le menu hamburger qui une fois cliquée affiche un menu déroulant vers le haut qui contient d'autres options :
+
+- (Icone roue dentée)  Paramètres
+- (Icone d'activité)   Votre activité
+- (Icone lune)         Changer de thème
+
+#### 3.2. Section principale
 
 L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où, de la même façon que sur instagram, s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize et qui prend en compte une multitude de parametres liés à l'utilisateur.
 
 Comme l'utilisateur n'a pas d'abonnés ni d'abonnements, l'utilisateur a la possibilité, grâce à l'apparition d'un component situé sur la partie superieur de la section où se situe le feed, qui contient du texte informant de la possibilité de s'abonner à d'autres utlisateurs ou d'inviter ses contacts, d'appuyer sur un bouton afin de trouver des ami(e)s. En cliquant sur le bouton il peut accéder à une partie de l'app où s'affiche une liste d'utilisateurs en fonction du système de suggestion. d'ajouter des ami(e)s qui lui sont suggerés en fonction des données transmises ou du système de suggestion, qu'il faudra également configuré. Mais il peut également inviter ses contacts à rejoindre l'application.
 
-### 2. Webapp taille tablette UX/UI
+#### 3.4. Section secondaire
 
-### 3. Webapp taille mobile UX/UI
-
-### 4. Mobile app UX/UI
-
-### 5. Mobile app UX/UI
+Suggestions d'amis, de communautés
 
 ## Fonctionnalités
 
