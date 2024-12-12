@@ -78,29 +78,29 @@ Lors de la première partie de l'inscription, l'utilisateur pourra passer direct
 
 (Une info est présente sur un component où il doit cocher qui stipule qu'en s'inscrivant, il accepte nos conditions générales d'utilisation et la politique de confidentialité)
 
-==CLIQUE BOUTON SUIVANT==
+    ==CLIQUE BOUTON SUIVANT==
 
 ##### 1.3. Validation avec code reçu
 
 Un mail ou un sms, en fonction de ce qu'il a entré, lui est envoyé avec un code de vérification afin de finaliser cette première inscription dans l'écosystème et activer le compte. L'utilisateur est face à un component qui lui demande d'entrer le code. Lorsque le code est entré, cette phase de l'inscription est terminée et on peut passer à la suite. A cette étape, nous avons dores et déjà des données sur cet utilisateur confirmé. L'adresse email et/ou le numéro de téléphone.
 
-==CLIQUE BOUTON VALIDATION===
+    ==CLIQUE BOUTON VALIDATION===
 
 ##### 1.4. KYC Procedure
 
 C'est un point central de l'application car ce processus doit être rapide et facile pour l'utilisateur. Autrement dit très pédagogique. Cette partie est très semblable à ce que l'on retrouve sur les plateformes de trading de cryptomonnaies telles que binance ou kraken. L'utilisateur est face à un component qui l'informe que Pazar a pour but de mettre à disposition de ses utilisateurs un réseau social commercial afin que les utilisateurs puissent acheter et vendre de façon sécurisée et vérifiée. Par conséquent, il est essentiel que chaque utilisateur vérifie son identité. Un lien vers la politique de confidentialité est présent afin que les utilisateurs sache de quelle façon les données sont traitées.
 
-    - ==CLIQUE BOUTON SUIVANT==
+    ==CLIQUE BOUTON SUIVANT==
 
 1. L'utilisateur arrive face à un componant qui contient un formulaire muni d'un bouton suivant. Ce formulaire est la première étape du KYC, si il n'est pas dûment rempli, l'utilisateur ne peut pas poursuivre en cliquant sur le bouton suivant et un message d'erreur demandant de remplir correctement le formulaire s'affiche. Tous les champs sont obligatoires initialement. Il est demandé au client de remplir le formulaire dans lequel les champs sont les suivants : nom et prénoms (au pluriel) tels qu'inscrits sur sa carte d'identité ou permis de conduire, son pays de résidence, son adresse, code postale, ville et numero de téléphone.
 Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l'étape du processus d'inscription a lieu et si il revient sur l'appli, il pourra poursuivre son inscription où il en était avec un message qui lui dira "Vous êtes de retour pour finaliser votre inscription etc...".
-    - ==CLIQUE BOUTON SUIVANT==
+    ==CLIQUE BOUTON SUIVANT==
 
 2. L'utilisateur arrive sur un component qui lui demande de upload une photo de sa carte d'identité nationale ou de son permis de conduire, recto et verso. Une fois cela fait il peut cliquer sur le bouton suivant.
-    - ==CLIQUE BOUTON SUIVANT==
+    ==CLIQUE BOUTON SUIVANT==
 
 3. Après le clique, l'analyse KYC a lieu. Ici, il y aura deux options; coder soi-même la procédure de KYC ou implementer un service tiers pour faire la vérification. Je pense quie la deuxième option sera plus viable sachant que les services tiers font déjà le travail en fonction de chaque pays. L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur ordinateur, il lui est demandé de fournir la copie d'un document officiel qui prouve qu'il est bien le détenteur de cette identité. Cela n'aura pas lieu sur la version mobile car la reconnaissance faciale prendra le relai à cette étape là. Donc j'imagine que sur la version webapp, ne seront accepté que les factures de téléphone ou une facture de l'assurance maladie.
-==CLIQUE BOUTON SUIVANT==
+    ==CLIQUE BOUTON SUIVANT==
 
 4. L'utilisateur est maintenant face à un component qui charge afin de lui montrer que l'anayse de sa procédure de KYC est en cours. Si il y a une erreur l'état du component change et mentionne à l'utilisateur ce qui ne va pas. Un bouton apparait afin de corriger le point si cela est possible. Si c'est possible, l'utilisateur retourne à l'étape du KYC, clique sur suivant et arrive directement à l'étape suivante qu'il faut corriger ou à la fin de la procédure de KYC où l'analyse a lieu si il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
 En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur arrive automatiquement sur l'accueil et l'inscription est finalisée.
