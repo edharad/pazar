@@ -36,15 +36,11 @@ L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'a
 
 La webapp se distingue en 3 tailles et pour chacune des tailles, la dispositon et la visibilité des composants seront différentes pour des question de responsive. Par conséquent, il sera nécessaire de montrer où se trouvent les composants en fonction de chaque taille pour chaque situation. Les tailles en question sont les suivantes :
 
-1. Une taille desktop: ≥ 1025px
-2. Une taille tablette: ≥ 481px && ≤ 1024px
-3. Une taille mobile: ≤ 480px
+- Une taille desktop: ≥ 1025px
+- Une taille tablette: ≥ 481px && ≤ 1024px
+- Une taille mobile: ≤ 480px
 
-Le rendu en fonction des tailles ne devrait pas radicalement différer entre la version webapp taille mobile et la version mobile de l'application.
-
-Par conséquent, ici nous allons aborder chaque étape de l'expérience utilisateur en partant initialement de son inscription jusqu'à l'utilisation de chaque fonctionnalité de l'application pour chaque version de l'application. A savoir les versions webapp et mobile.
-
-Pour chaque utilisation, fonctionnalité ou changement au niveau de l'interface:
+Le rendu en fonction des tailles ne devrait pas radicalement différer entre la version webapp taille mobile et la version mobile de l'application. Par conséquent, ici nous allons aborder chaque étape de l'expérience utilisateur en partant initialement de son inscription jusqu'à l'utilisation de chaque fonctionnalité de l'application pour chaque version de l'application. A savoir les versions webapp, mobile et tablette. Bien qu'il n'y ait pas trop de différences, nous souhaitons tout de même présenter les éléments suivants:
 
 - Une maquette de l'interface développée sur figma sera jointe au point.
 - Explication de l'expérience de l'utilisateur avec chaque élément de l'interface.
@@ -52,7 +48,7 @@ Pour chaque utilisation, fonctionnalité ou changement au niveau de l'interface:
 
 Aussi pour faciliter les choses nous allons à chaque fois montrer la différence en terme de rendu, si il y en a, de la dipositiond des éléments en fonction de la taille.
 
-**Informations importantes:**
+#### Important
 
 Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
 
@@ -90,13 +86,13 @@ Un mail ou un sms, en fonction de ce qu'il a entré, lui est envoyé avec un cod
 
 INFORMATION : il est possible que pour le KYC l'application fasse appel à un service tiers déjà programmé.
 
-##### 2.3.1 KYC - INFORMATIONS ET CONDITIONS DU KYC
+##### 2.3.1. KYC - INFORMATIONS ET CONDITIONS DU KYC
 
 --> IMAGE DE LA PREMIÈRE ÉTAPE DU KYC INFORMATIONS ET CONDITIONS DU KYC
 
 C'est un point central de l'application car ce processus doit être rapide et facile pour l'utilisateur. Autrement dit très pédagogique. Cette partie est très semblable à ce que l'on retrouve sur les plateformes de trading de cryptomonnaies telles que binance ou kraken. L'utilisateur est face à un component qui l'informe que Pazar a pour but de mettre à disposition de ses utilisateurs un réseau social commercial afin que les utilisateurs puissent acheter et vendre de façon sécurisée et vérifiée. Par conséquent, il est essentiel que chaque utilisateur vérifie son identité. Un lien vers la politique de confidentialité est présent afin que les utilisateurs sache de quelle façon les données sont traitées.
 
-##### 2.3.2 KYC - FORMULAIRE D'INSCRIPTION COMPLET
+##### 2.3.2. KYC - FORMULAIRE D'INSCRIPTION COMPLET
 
 --> IMAGE DE LA DEUXIÈME ETAPE DU KYC > FORMULAIRE
 
@@ -109,13 +105,13 @@ Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l
 
 L'utilisateur arrive sur un component qui lui demande de upload une photo de sa carte d'identité nationale ou de son permis de conduire, recto et verso. Une fois cela fait il peut cliquer sur le bouton suivant.
 
-##### 2.3.4 KYC - UPLOAD OFFICAL DOCUMENT & ADRESS VERIFICATION
+##### 2.3.4. KYC - UPLOAD OFFICAL DOCUMENT & ADRESS VERIFICATION
 
 --> IMAGE DE LA QUATRIÈME ETAPE DU KYC - UPLOAD DE DOCUMENT OFFICIEL
 
 L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur la webapp, il lui est demandé de fournir la copie d'un document officiel qui prouve qu'il est bien le détenteur de cette identité. Cela n'aura pas lieu sur la version mobile ou si la webapp est sur un navigateur sur mobile ou tablette car la reconnaissance faciale prendra le relai à cette étape là. Donc j'imagine que sur la version webapp desktop, ne seront acceptées que les factures de téléphone ou une facture de l'assurance maladie.
 
-##### 2.3.5 KYC - VERIFICATION EN COURS
+##### 2.3.5. KYC - VERIFICATION EN COURS
 
 --> IMAGE DE LA CINQUIÈME ÉTAPE DU KYC - VÉRIFICATION ET REDIRECTION
 
@@ -126,16 +122,17 @@ En cas de réussite, le component change d'état, affiche un vu vert ou autre ch
 
 --> IMAGE DE L'INTERFACE DE L'ACCUEIL
 
-Comme on peut le constater sur l'image, l'interface
+Comme on peut le constater sur l'image pour la taille desktop, on retrouve dans la navbar verticale située à gauche, des éléments de menus qui nous permettent de naviguer sur Pazar. En dessous du nom de l'application, il y a les éléments de menu suivant.
 
-- (Icone maison) Accueil
-- (Icone globe) Explorer
-- (Icone Boutique) Boutique
+- (Icone maison)       Accueil
+- (Icone loupe)        Recherche
+- (Icone globe)        Explorer
+- (Icone Boutique)     Boutique
 - (Icone avion papier) Messagerie
-- (Icone profile) Profile
-- (Icone communauté) Communautés
-- (Icon notification) Notifications
-- (Icone paramètres) Paramètres
+- (Icone profile)      Profile
+- (Icone communauté)   Communautés
+- (Icon notification)  Notifications
+- (Icone paramètres)   Paramètres
 
 L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où, de la même façon que sur instagram, s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize et qui prend en compte une multitude de parametres liés à l'utilisateur.
 
