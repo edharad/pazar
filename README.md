@@ -94,10 +94,10 @@ C'est un point central de l'application car ce processus doit être rapide et fa
 
 1. L'utilisateur arrive face à un componant qui contient un formulaire muni d'un bouton suivant. Ce formulaire est la première étape du KYC, si il n'est pas dûment rempli, l'utilisateur ne peut pas poursuivre en cliquant sur le bouton suivant et un message d'erreur demandant de remplir correctement le formulaire s'affiche. Tous les champs sont obligatoires initialement. Il est demandé au client de remplir le formulaire dans lequel les champs sont les suivants : nom et prénoms (au pluriel) tels qu'inscrits sur sa carte d'identité ou permis de conduire, son pays de résidence, son adresse, code postale, ville et numero de téléphone.
 Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l'étape du processus d'inscription a lieu et si il revient sur l'appli, il pourra poursuivre son inscription où il en était avec un message qui lui dira "Vous êtes de retour pour finaliser votre inscription etc...".
-**==CLIQUE BOUTON SUIVANT==**
+    - ==CLIQUE BOUTON SUIVANT==
 
 2. L'utilisateur arrive sur un component qui lui demande de upload une photo de sa carte d'identité nationale ou de son permis de conduire, recto et verso. Une fois cela fait il peut cliquer sur le bouton suivant.
-==CLIQUE BOUTON SUIVANT==
+    - ==CLIQUE BOUTON SUIVANT==
 Après le clique, l'analyse KYC a lieu. Ici, je ne sais pas comment ça fonctionne ou si il faut un service tiers pour faire le travail.
 
 3. L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur ordinateur, il lui est demandé de fournir la copie d'un document officiel qui prouve qu'il est bien le détenteur de cette identité. Cela n'aura pas lieu sur la version mobile car la reconnaissance faciale prendra le relai à cette étape là. Donc j'imagine que sur la version webapp, ne seront accepté que les factures de téléphone ou une facture de l'assurance maladie.
