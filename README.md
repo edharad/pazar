@@ -30,7 +30,11 @@ Le présent fichier (README) fait office de journal de bord afin de présenter l
 
 ## User Experience (UX) & User Interface (UI)
 
-### Introduction UX/UI
+### Important
+
+Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
+
+### 0. Introduction UX/UI
 
 L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'application est lancée. Ici, nous allons différencier 3 versions d'application. Webapp, iOS et android. D'autres versions pourront être développées ultérieurement. Elles partageront les mêmes données mais il y aura quelques différences en termes d'interface. Ces aspects seront clarifiés dans les explications relatives à l'UI.
 
@@ -61,15 +65,13 @@ Le rendu en fonction des tailles ne devrait pas radicalement différer entre la 
 
 Aussi pour faciliter les choses nous allons à chaque fois montrer la différence en terme de rendu, si il y en a, de la dipositiond des éléments en fonction de la taille.
 
-### Important
-
-Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
-
 ### 1. Landing
 
 --> IMAGE LANDING PAGE WEB DESKTOP, MOBILE, TABLETTE
 
 ### 2. Inscription et connexion
+
+#### 2.0. Introduction - Inscription et connexion
 
 Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone sur le formulaire de l'interface de la landing page. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple.
 
@@ -106,6 +108,10 @@ INFORMATION : il est possible que pour le KYC l'application fasse appel à un se
 
 C'est un point central de l'application car ce processus doit être rapide et facile pour l'utilisateur. Autrement dit très pédagogique. Cette partie est très semblable à ce que l'on retrouve sur les plateformes de trading de cryptomonnaies telles que binance ou kraken. L'utilisateur est face à un component qui l'informe que Pazar a pour but de mettre à disposition de ses utilisateurs un réseau social commercial afin que les utilisateurs puissent acheter et vendre de façon sécurisée et vérifiée. Par conséquent, il est essentiel que chaque utilisateur vérifie son identité. Un lien vers la politique de confidentialité est présent afin que les utilisateurs sache de quelle façon les données sont traitées.
 
+Lui sera également demandé d'accepter le suivi de la localisation afin d'affiner les recommandations pour lui. Donc un popup s'ouvrira qu'il pourra accepter ou non pour le suivi de la localisation juste après qu'il est appuyer sur le bouton accepter pour débuter le KYC et juste avant l'étape du formulaire complet.
+
+--> IMAGE POPUP LOCALISATION
+
 ##### 2.3.2. KYC - FORMULAIRE D'INSCRIPTION COMPLET
 
 --> IMAGE DE LA DEUXIÈME ETAPE DU KYC > FORMULAIRE
@@ -119,24 +125,26 @@ Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l
 
 L'utilisateur arrive sur un component qui lui demande de upload une photo de sa carte d'identité nationale ou de son permis de conduire, recto et verso. Une fois cela fait il peut cliquer sur le bouton suivant.
 
-##### 2.3.4. KYC - UPLOAD OFFICAL DOCUMENT & ADRESS VERIFICATION
+##### 2.3.4. KYC - UPLOAD OFFICAL DOCUMENT, ADRESS VERIFICATION OR BIOMETRIC VERIFICATION
 
+--> IMAGE DES DEUX OPTIONS DE VERIFICATION
 --> IMAGE DE LA QUATRIÈME ETAPE DU KYC - UPLOAD DE DOCUMENT OFFICIEL
+--> IMAGE INTERFACE FACE ID VERIFICATION
 
-L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur la webapp, il lui est demandé de fournir la copie d'un document officiel qui prouve qu'il est bien le détenteur de cette identité. Cela n'aura pas lieu sur la version mobile ou si la webapp est sur un navigateur sur mobile ou tablette car la reconnaissance faciale prendra le relai à cette étape là. Donc j'imagine que sur la version webapp desktop, ne seront acceptées que les factures de téléphone ou une facture de l'assurance maladie.
+L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur la webapp, il lui est demandé de fournir la copie d'un document officiel qui prouve qu'il est bien le détenteur de cette identité. Cela n'aura pas lieu sur la version mobile ou si la webapp est sur un navigateur sur mobile ou tablette car la reconnaissance faciale prendra le relai à cette étape là. Donc j'imagine que sur la version webapp desktop, ne seront acceptées que les factures de téléphone ou une facture de l'assurance maladie. Cependant, il faudra proposer les deux options à l'utilisateur. Vérifier par facture ou vérifier par face ID.
 
 ##### 2.3.5. KYC - VERIFICATION EN COURS
 
 --> IMAGE DE LA CINQUIÈME ÉTAPE DU KYC - VÉRIFICATION ET REDIRECTION
 
-L'utilisateur est maintenant face à un component qui charge afin de lui montrer que l'anayse de sa procédure de KYC est en cours. Si il y a une erreur l'état du component change et mentionne à l'utilisateur ce qui ne va pas. Un bouton apparait afin de corriger le point si cela est possible. Si c'est possible, l'utilisateur retourne à l'étape du KYC, clique sur suivant et arrive directement à l'étape suivante qu'il faut corriger ou à la fin de la procédure de KYC où l'analyse a lieu si il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
+L'utilisateur est maintenant face à un component qui montre un cercle en chargement afin de lui montrer que l'analyse de sa procédure de KYC est en cours. Si c'est valide le cercle se transforme en cercle avec un vu et un message de succès. S'il y a une erreur l'état du component change et affiche le message d'erreur. Le message d'erreur s'affiche à l'utilisateur. L'info retourne un cliquable afin de corriger le point si cela est possible. Alors l'utilisateur retourne à l'étape du KYC où il peut corriger ce qu'il a fait, corrige, clique sur suivan, arrive à l'étape suivante qu'il faut corriger s'il y en a encore ou arrive à la fin de la procédure de KYC. L'analyse a lieu à nouveau, s'il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
 En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur est redirigé automatiquement vers l'étape du choix des centres d'intérets.
 
 #### 2.4. Centres d'intérêts
 
 --> IMAGE DE L'INTERFACE AFFICHANT LE COMPONENT CENTRE D'INTÉRETS
 
-Durant cette étape, lui sont proposées des catégories de produits ou des centres d'intérêts. Par exemple, il peut y avoir le sport, le fitness, les automobiles, la construction, les biens immobiliers etc. Le choix de ces centres d'intérêts se devra d'être au minimum de 5 obligatoires. Cette étape est cruciale afin d'initialiser le feed. Bien entendu le système de recommandation étant bien plus technique et dynamique que cela, le contenu du feed dépendera de bien plus de facteurs que ce qu'il aura choisi comme centres d'intérêts. Nous nous y attarderons dans le point spécifique au développement du feed et de l'intégration du système de recommandation.
+Durant cette étape, lui sont proposées des catégories de produits ou des centres d'intérêts. Par exemple, il peut y avoir le sport, le fitness, les automobiles, la construction, les biens immobiliers etc. Le choix de ces centres d'intérêts se devra d'être au minimum de 5 obligatoires. Cette étape est cruciale afin d'initialiser le feed. Bien entendu le système de recommandation étant bien plus technique et dynamique que cela, le contenu du feed dépendera de bien plus de facteurs que ce qu'il aura choisi comme centres d'intérêts. Nous nous y attarderons dans le point spécifique au développement du feed et de l'intégration du système de recommandation avec le traitement des données générées par l'utilisateur.
 
 #### 2.5. Activation de l'authentification à 2 facteurs (2FA) ou authentication biométrique
 
@@ -144,14 +152,14 @@ Durant cette étape, lui sont proposées des catégories de produits ou des cent
 
 Cette étape précède la finalisation de l'inscription et demande à l'utilisateur s'il souhaite activer l'authentification à deux facteurs pour des raisons de sécurité. S'il souhaite le faire, il peut choisir de le faire via application d'authentication, numéro de téléphone. Il peut également choisir de le faire de façon biométrique. Il peut accepter et configurer ou refuser et passer à la suite.
 
-### 3. Layout global
+### 3. Layout global (Acceuil)
 
-#### Introduction layout global
+#### 3.0.Introduction layout global
 
 --> IMAGES DU LAYOUT GLOBAL ACCUEIL (desktop, tablette, mobile)
 --> IMAGES DU LAYOUT DE LA VERSION MOBILE ET DIFFERENCES AVEC WEBAPP MOBILE
 
-Une brève présentation générale s'impose afin de rapidement connaitre les sections du layout et différencier celles qui sont visibles en fonction de la taille de l'écran.
+Une brève présentation générale s'impose afin de rapidement connaitre les sections du layout général et différencier celles qui sont visibles en fonction de la taille de l'écran.
 
 - Taille desktop
 
@@ -178,6 +186,8 @@ Ci-dessous une liste simplifiée des sections visibles et invisibles en fonction
 | Suggest Sec   | ✔️                     | ❌                           | ❌              |
 
 #### 3.1. Navbar menu
+
+--> IMAGE DES NAVBARS SELON CHAQUE TAILLE
 
 La navbar est un élément du layout qui est essentiel pour la navigation de l'utilisateur. Les éléments du menu sont listés dans le tableau ci-dessous. Comme vous pouvez le voir, certains éléments sont visibles et d'autres ne le sont pas suivant la taille de l'écran. Les points suivants expliqueront de quelle façon sont disposés les éléments du menu suivant l'écran.
 
@@ -235,15 +245,20 @@ Proche du bord inférieur, le menu hamburger qui une fois cliquée affiche un me
 
 #### 3.2. Section principale
 
-L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où, de la même façon que sur instagram, s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize et qui prend en compte une multitude de parametres liés à l'utilisateur.
+--> IMAGES DE LA SECTION PRINCIPALE AVEC ET SANS ABONNEMENTS
 
-Comme l'utilisateur n'a pas d'abonnés ni d'abonnements, l'utilisateur a la possibilité, grâce à l'apparition d'un component situé sur la partie superieur de la section où se situe le feed, qui contient du texte informant de la possibilité de s'abonner à d'autres utlisateurs ou d'inviter ses contacts, d'appuyer sur un bouton afin de trouver des ami(e)s. En cliquant sur le bouton il peut accéder à une partie de l'app où s'affiche une liste d'utilisateurs en fonction du système de suggestion. d'ajouter des ami(e)s qui lui sont suggerés en fonction des données transmises ou du système de suggestion, qu'il faudra également configuré. Mais il peut également inviter ses contacts à rejoindre l'application.
+L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller vers le bas afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize et qui prend en compte une multitude de paramètres liés à l'utilisateur et l'écosystème.
+
+Comme l'utilisateur n'a pas d'abonnés ni d'abonnements initialement, il a la possibilité, grâce à l'apparition d'un component situé sur la partie superieur de la section où se situe le feed et qui normalement contient le flux des storys des abonnements, de cliquer sur un bouton afin de changer le contenu du flux principale en dessous et s'abonner à d'autres utlisateurs via suggestion ou d'inviter ses contacts. D'ajouter des ami(e)s qui lui sont suggerés en fonction des données transmises ou du système de suggestion, qu'il faudra également configuré. Mais il peut également inviter ses contacts à rejoindre l'application.
+
+--> IMAGE DU FLUX DE SUGGESTION
+--> IMAGE DE L'INVITATION DES AMIS ET SUGGESTION ET POPUP DE DEMANDE D'ACCÈS AUX CONTACTS POUR LA VERSION MOBILE
 
 #### 3.3. Section secondaire
 
 Suggestions d'amis, de communautés
 
-### 4. Layout spécifique à chaque élément du menu
+### 4. Changement d'interface en fonction de l'élément actif du menu
 
 ## Fonctionnalités
 
