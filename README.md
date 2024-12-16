@@ -53,13 +53,13 @@ L'architecture de l'application "Pazar" est basée sur une approche microservice
 
 ### Déploiement et hébergement
 
-L'application sera déployée sur une infrastructure basée sur Kubernetes pour l'orchestration des conteneurs et Docker pour la conteneurisation. Cela permettra une gestion efficace des déploiements, une scalabilité automatique et une tolérance aux pannes.
+L'application sera déployée sur une infrastructure utilisant Kubernetes pour l'orchestration des conteneurs et Docker pour la conteneurisation, permettant une gestion efficace des déploiements, une scalabilité automatique et une tolérance aux pannes.
 
 ### Bases de données
 
-L'application utilisera PostgreSQL pour les données relationnelles et MongoDB pour les données non relationnelles. Cela permettra de gérer efficacement les différentes types de données et d'assurer une haute disponibilité et une performance optimale.
+L'application utilisera PostgreSQL pour les données relationnelles et MongoDB pour les données non relationnelles, assurant une gestion efficace des différents types de données, une haute disponibilité et une performance optimale.
 
-## Technologies
+### Technologies
 
 ### Frontend
 
@@ -78,38 +78,61 @@ L'application utilisera PostgreSQL pour les données relationnelles et MongoDB p
 
 ### Authentification et Autorisation
 
-- **Technologies** : OAuth 2.0, JWT (JSON Web Tokens)
+- **OAuth 2.0** : Pour la gestion des autorisations.
+- **JWT (JSON Web Tokens)** : Pour la gestion des sessions.
+- **Vérification d'identité (KYC)** : Utilisation de services tiers comme Jumio, Onfido, IDnow, Trulioo, ou Authenteq pour la vérification d'identité.
+- **Authentification à deux facteurs (2FA)** : Utilisation de services comme Authy, Google Authenticator, ou des solutions SMS/Email pour l'authentification à deux facteurs.
+
+### Paiements
+
+- **Stripe ou PayPal** : Pour gérer les transactions financières de manière sécurisée.
 
 ### Stockage de fichiers
 
-- **Technologies** : AWS S3 ou Google Cloud Storage
+- **AWS S3 ou Google Cloud Storage** : Pour le stockage sécurisé des fichiers.
 
 ### Messagerie et Notifications
 
-- **Messagerie en temps réel** : WebSockets
-- **Notifications push** : Firebase Cloud Messaging (FCM)
+- **WebSockets** : Pour la messagerie en temps réel.
+- **Firebase Cloud Messaging (FCM)** : Pour les notifications push.
+
+### Recherche
+
+- **Algolia ou Elasticsearch** : Pour fournir une recherche rapide et pertinente.
 
 ### Système de recommandation
 
-- **Technologies** : Amazon Personalize ou un moteur de recommandation personnalisé
+- **Amazon Personalize ou un moteur de recommandation personnalisé** : Pour personnaliser les recommandations de produits et d'utilisateurs.
+
+### Email
+
+- **SendGrid ou Mailgun** : Pour l'envoi d'emails transactionnels et de notifications.
+
+### Analytics
+
+- **Google Analytics ou Mixpanel** : Pour suivre et analyser le comportement des utilisateurs.
+
+### Content Delivery Network (CDN)
+
+- **Cloudflare ou AWS CloudFront** : Pour améliorer la performance et la sécurité de la livraison de contenu.
 
 ### CI/CD
 
-- **Technologies** : GitHub Actions, Jenkins ou GitLab CI/CD
+- **GitHub Actions, Jenkins ou GitLab CI/CD** : Pour l'intégration et le déploiement continus.
 
 ### Monitoring
 
-- **Technologies** : Prometheus, Grafana
+- **Prometheus, Grafana** : Pour la surveillance des performances et des alertes.
 
 ### Logging
 
-- **Technologies** : ELK Stack (Elasticsearch, Logstash, Kibana)
+- **ELK Stack (Elasticsearch, Logstash, Kibana)** : Pour la collecte et l'analyse des logs.
 
 ## UX & UI
 
 ### Important
 
-Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
+Chacun des points susmentionnés est essentiel pour choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et fonctionnels, sélectionner les frameworks, langages ou services tiers à utiliser, et isoler les problèmes potentiels liés à la sécurité. Cette section du README sera mise à jour continuellement en fonction des décisions technologiques prises durant le développement et les mises à jour de l'application.
 
 ### Introduction UX/UI
 
