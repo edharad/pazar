@@ -11,12 +11,22 @@ Pazar est une application de marché en ligne sécurisée pour le commerce entre
 ## Table des matières
 
 1. [Présentation](#présentation)
-2. [Journal de bord du développement](#journal-de-bord-du-développement)
-3. [Architecture de l'application](#architecture-de-lapplication)
+2. [Journal de bord](#journal-de-bord)
+3. [Architecture](#architecture)
    - [Déploiement et hébergement](#déploiement-et-hébergement)
    - [Bases de données](#bases-de-données)
-4. [Technologies, frameworks, languages, services tiers](#technologies-frameworks-languages-services-tiers)
-5. [User Experience (UX) & User Interface (UI)](#user-experience-ux--user-interface-ui)
+4. [Technologies](#technologies)
+   - [Frontend](#frontend)
+   - [Backend](#backend)
+   - [Base de données](#base-de-données)
+   - [Authentification et Autorisation](#authentification-et-autorisation)
+   - [Stockage de fichiers](#stockage-de-fichiers)
+   - [Messagerie et Notifications](#messagerie-et-notifications)
+   - [Système de recommandation](#système-de-recommandation)
+   - [CI/CD](#cicd)
+   - [Monitoring](#monitoring)
+   - [Logging](#logging)
+5. [UX & UI](#ux--ui)
    - [Introduction UX/UI](#introduction-uxui)
    - [Landing UX/UI](#landing-uxui)
    - [Inscription et connexion UX/UI](#inscription-et-connexion-uxui)
@@ -29,44 +39,17 @@ Pazar est une application de marché en ligne sécurisée pour le commerce entre
 
 ## Présentation
 
-L'objectif de l'application "Pazar" est de fournir une place de marché en ligne sécurisée pour le commerce entre particuliers. Notamment la vente et l'achat de biens entre particuliers. Cette place de marché se présente sous la forme d'un réseau social semblable aux applications déjà existantes. Cependant, tous les utilisateurs doivent passer une procédure de vérification d'identité (KYC) afin de vendre ou d'acheter des produits sur la plateforme. Cette procédure est semblable à celle des applications de trading de cryptomonnaie. L'application répond au besoin croissant de garantir la sécurité des achats et des ventes au sein de relations commerciales de tout type (C2C, B2C, B2B, etc.). Pazar souhaite s'étendre globalement dans le monde afin de promouvoir les circuits économiques courts.
+L'application "Pazar" a pour objectif de fournir une place de marché en ligne sécurisée pour le commerce entre particuliers, facilitant la vente et l'achat de biens. Elle se distingue par son intégration de fonctionnalités de réseau social et une procédure de vérification d'identité (KYC) obligatoire pour tous les utilisateurs souhaitant vendre ou acheter des produits. Cette procédure, similaire à celle utilisée par les applications de trading de cryptomonnaie, vise à garantir la sécurité des transactions.
 
-Pazar sera une application multiplatformes que l'on pourra retrouver en tant que webapp avec accès par URL, en application mobile et tablette pour les iOS, Android etc, et d'autres supports si cela est intéressant pour l'expansion du projet.
+Pazar répond à un besoin croissant de sécurité dans les relations commerciales de tout type (C2C, B2C, B2B, etc.) et ambitionne de promouvoir les circuits économiques courts à l'échelle mondiale. L'application sera disponible sur plusieurs plateformes : en tant que webapp accessible via URL, en application mobile et tablette pour iOS et Android, et potentiellement sur d'autres supports en fonction des opportunités d'expansion du projet.
 
-## Journal de bord du développement
+## Journal de bord
 
 Le présent fichier (README) fait office de journal de bord afin de présenter les fonctionnalités de l'application, mais aussi avoir un suivi sur son développement, son déploiement, sa maintenance, sa gestion et sa mise à jour. Des fichiers annexes tels que [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md), [ROADMAP.md](ROADMAP.md) seront également créés et mis à jour en fonction de l'avancée du projet. README sera le fichier de référence pour l'ensemble de l'application car il permet d'être versionné et d'être consulté de façon dynamique.
 
-## Architecture de l'application
+## Architecture
 
 L'architecture de l'application "Pazar" est basée sur une approche microservices pour assurer la scalabilité, la maintenabilité et la résilience.
-
-+-------------------+       +-------------------+
-|    Frontend       |       |    Frontend       |
-|  (React.js/Vue.js)|       |  (React Native)   |
-+--------+----------+       +--------+----------+
-         |                           |
-         |                           |
-         v                           v
-+--------+----------+       +--------+----------+
-|  API Gateway      |       |  API Gateway      |
-|  (GraphQL)        |       |  (GraphQL)        |
-+--------+----------+       +--------+----------+
-         |                           |
-         |                           |
-         v                           v
-+--------+----------+       +--------+----------+
-|  Microservices    |       |  Microservices    |
-|  (Node.js/NestJS) |       |  (Node.js/NestJS) |
-+--------+----------+       +--------+----------+
-         |                           |
-         |                           |
-         v                           v
-+--------+----------+       +--------+----------+
-|  Databases        |       |  Databases        |
-|  (PostgreSQL,     |       |  (PostgreSQL,     |
-|   MongoDB)        |       |   MongoDB)        |
-+-------------------+       +-------------------+
 
 ### Déploiement et hébergement
 
@@ -76,20 +59,53 @@ L'application sera déployée sur une infrastructure basée sur Kubernetes pour 
 
 L'application utilisera PostgreSQL pour les données relationnelles et MongoDB pour les données non relationnelles. Cela permettra de gérer efficacement les différentes types de données et d'assurer une haute disponibilité et une performance optimale.
 
-## Technologies, frameworks, languages, services tiers
+## Technologies
 
-- **Frontend** : React.js ou Vue.js pour la webapp, React Native ou Flutter pour les applications mobiles.
-- **Backend** : Node.js avec Express.js ou NestJS pour les microservices, GraphQL pour les requêtes et mutations.
-- **Base de données** : PostgreSQL, MongoDB.
-- **Authentification et Autorisation** : OAuth 2.0, JWT (JSON Web Tokens).
-- **Stockage de fichiers** : AWS S3 ou Google Cloud Storage.
-- **Messagerie et Notifications** : WebSockets pour la messagerie en temps réel, Firebase Cloud Messaging (FCM) pour les notifications push.
-- **Système de recommandation** : Amazon Personalize ou un moteur de recommandation personnalisé.
-- **CI/CD** : GitHub Actions, Jenkins ou GitLab CI/CD.
-- **Monitoring** : Prometheus, Grafana.
-- **Logging** : ELK Stack (Elasticsearch, Logstash, Kibana).
+### Frontend
 
-## User Experience (UX) & User Interface (UI)
+- **Webapp** : React.js ou Vue.js
+- **Applications mobiles** : React Native ou Flutter
+
+### Backend
+
+- **Microservices** : Node.js avec Express.js ou NestJS
+- **API** : GraphQL pour les requêtes et mutations
+
+### Base de données
+
+- **Relationnelle** : PostgreSQL
+- **Non relationnelle** : MongoDB
+
+### Authentification et Autorisation
+
+- **Technologies** : OAuth 2.0, JWT (JSON Web Tokens)
+
+### Stockage de fichiers
+
+- **Technologies** : AWS S3 ou Google Cloud Storage
+
+### Messagerie et Notifications
+
+- **Messagerie en temps réel** : WebSockets
+- **Notifications push** : Firebase Cloud Messaging (FCM)
+
+### Système de recommandation
+
+- **Technologies** : Amazon Personalize ou un moteur de recommandation personnalisé
+
+### CI/CD
+
+- **Technologies** : GitHub Actions, Jenkins ou GitLab CI/CD
+
+### Monitoring
+
+- **Technologies** : Prometheus, Grafana
+
+### Logging
+
+- **Technologies** : ELK Stack (Elasticsearch, Logstash, Kibana)
+
+## UX & UI
 
 ### Important
 
@@ -126,11 +142,74 @@ Le rendu en fonction des tailles ne devrait pas radicalement différer entre la 
 
 --> IMAGE LANDING PAGE WEB DESKTOP, MOBILE, TABLETTE
 
-#### 1.1. Landing - taille destkop UX/UI
+#### 1.1. Page de connexion (Landing) - Taille Desktop UX/UI
 
-#### 1.1. Landing - taille tablette UX/UI
+La page de connexion (Landing) pour la version desktop de l'application "Pazar" s'inspire du layout de la page de connexion de la webapp d'Instagram. Voici les principaux composants et leur disposition :
 
-#### 1.2. Landing - taille mobile UX/UI
+- **Container principal** :
+  - Divisé en deux sections principales : une image de présentation à gauche et le formulaire de connexion à droite.
+
+- **Section gauche** :
+  - Affiche une image ou une série d'images en rotation pour présenter les fonctionnalités de l'application.
+
+- **Section droite** :
+  - **Logo** : Affiché en haut du formulaire de connexion.
+  - **Formulaire de connexion** :
+    - Champs pour le nom d'utilisateur et le mot de passe.
+    - Bouton de connexion.
+    - Lien "Mot de passe oublié ?" pour récupérer le mot de passe.
+  - **Ou** : Une ligne de séparation avec le mot "Ou" pour indiquer une alternative.
+  - **Connexion avec les réseaux sociaux** : Bouton pour se connecter avec un compte de réseau social (par exemple, Facebook).
+  - **Inscription** : Lien vers la page d'inscription pour les nouveaux utilisateurs.
+
+- **Footer** :
+  - Liens vers les pages importantes (À propos, Contact, FAQ, etc.), les réseaux sociaux, et les informations légales.
+
+#### 1.2. Landing - Taille Tablette UX/UI
+
+La page de connexion (Landing) pour la version tablette de l'application "Pazar" s'inspire également du layout de la page de connexion de la webapp d'Instagram, mais avec des ajustements pour une meilleure expérience utilisateur sur les écrans de taille moyenne. Voici les principaux composants et leur disposition :
+
+- **Container principal** :
+  - Divisé en deux sections principales : une image de présentation en haut et le formulaire de connexion en bas.
+
+- **Section supérieure** :
+  - Affiche une image ou une série d'images en rotation pour présenter les fonctionnalités de l'application. L'image occupe environ la moitié de l'écran.
+
+- **Section inférieure** :
+  - **Logo** : Affiché en haut du formulaire de connexion.
+  - **Formulaire de connexion** :
+    - Champs pour le nom d'utilisateur et le mot de passe.
+    - Bouton de connexion.
+    - Lien "Mot de passe oublié ?" pour récupérer le mot de passe.
+  - **Ou** : Une ligne de séparation avec le mot "Ou" pour indiquer une alternative.
+  - **Connexion avec les réseaux sociaux** : Bouton pour se connecter avec un compte de réseau social (par exemple, Facebook).
+  - **Inscription** : Lien vers la page d'inscription pour les nouveaux utilisateurs.
+
+- **Footer** :
+  - Liens vers les pages importantes (À propos, Contact, FAQ, etc.), les réseaux sociaux, et les informations légales.
+
+#### 1.2. Landing - Taille Mobile UX/UI
+
+La page de connexion (Landing) pour la version mobile de l'application "Pazar" s'inspire du layout de la page de connexion de la webapp d'Instagram, mais avec des ajustements pour une meilleure expérience utilisateur sur les petits écrans. Voici les principaux composants et leur disposition :
+
+- **Container principal** :
+  - Une seule colonne avec le formulaire de connexion en haut et une image de présentation en bas.
+
+- **Section supérieure** :
+  - **Logo** : Affiché en haut du formulaire de connexion.
+  - **Formulaire de connexion** :
+    - Champs pour le nom d'utilisateur et le mot de passe.
+    - Bouton de connexion.
+    - Lien "Mot de passe oublié ?" pour récupérer le mot de passe.
+  - **Ou** : Une ligne de séparation avec le mot "Ou" pour indiquer une alternative.
+  - **Connexion avec les réseaux sociaux** : Bouton pour se connecter avec un compte de réseau social (par exemple, Facebook).
+  - **Inscription** : Lien vers la page d'inscription pour les nouveaux utilisateurs.
+
+- **Section inférieure** :
+  - Affiche une image ou une série d'images en rotation pour présenter les fonctionnalités de l'application.
+
+- **Footer** :
+  - Liens vers les pages importantes (À propos, Contact, FAQ, etc.), les réseaux sociaux, et les informations légales.
 
 ### Inscription et connexion UX/UI
 
