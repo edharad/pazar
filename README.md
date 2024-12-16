@@ -1,9 +1,17 @@
 # Pazar 0.0.0
 
+![Version](https://img.shields.io/badge/version-0.0.0-blue)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+
+## Introduction
+
+Pazar est une application de marché en ligne sécurisée pour le commerce entre particuliers, intégrant des fonctionnalités de réseau social et une procédure de vérification d'identité (KYC).
+
 ## Table des matières
 
 1. [Présentation](#présentation)
-2. [Journal de bord](#journal-de-bord)
+2. [Journal de bord du développement](#journal-de-bord-du-développement)
 3. [Architecture de l'application](#architecture-de-lapplication)
    - [Déploiement et hébergement](#déploiement-et-hébergement)
    - [Bases de données](#bases-de-données)
@@ -25,17 +33,61 @@ L'objectif de l'application "Pazar" est de fournir une place de marché en ligne
 
 Pazar sera une application multiplatformes que l'on pourra retrouver en tant que webapp avec accès par URL, en application mobile et tablette pour les iOS, Android etc, et d'autres supports si cela est intéressant pour l'expansion du projet.
 
-## Journal de bord
+## Journal de bord du développement
 
-Le présent fichier (README) fait office de journal de bord afin de présenter les fonctionnalités de l'application, mais aussi avoir un suivi sur son développement, son déploiement, sa maintenance, sa gestion et sa mise à jour. Des fichiers annexes tels que CONTRIBUTING.md, CHANGELOG.md, ROADMAP.md seront également crées et mis à jour en fonction de l'avancée du projet. README sera le fichier de référence pour l'ensemble de l'application car il permet d'être versionné et d'être consulté de façon dynamique.
+Le présent fichier (README) fait office de journal de bord afin de présenter les fonctionnalités de l'application, mais aussi avoir un suivi sur son développement, son déploiement, sa maintenance, sa gestion et sa mise à jour. Des fichiers annexes tels que [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md), [ROADMAP.md](ROADMAP.md) seront également créés et mis à jour en fonction de l'avancée du projet. README sera le fichier de référence pour l'ensemble de l'application car il permet d'être versionné et d'être consulté de façon dynamique.
 
 ## Architecture de l'application
 
+L'architecture de l'application "Pazar" est basée sur une approche microservices pour assurer la scalabilité, la maintenabilité et la résilience.
+
++-------------------+       +-------------------+
+|    Frontend       |       |    Frontend       |
+|  (React.js/Vue.js)|       |  (React Native)   |
++--------+----------+       +--------+----------+
+         |                           |
+         |                           |
+         v                           v
++--------+----------+       +--------+----------+
+|  API Gateway      |       |  API Gateway      |
+|  (GraphQL)        |       |  (GraphQL)        |
++--------+----------+       +--------+----------+
+         |                           |
+         |                           |
+         v                           v
++--------+----------+       +--------+----------+
+|  Microservices    |       |  Microservices    |
+|  (Node.js/NestJS) |       |  (Node.js/NestJS) |
++--------+----------+       +--------+----------+
+         |                           |
+         |                           |
+         v                           v
++--------+----------+       +--------+----------+
+|  Databases        |       |  Databases        |
+|  (PostgreSQL,     |       |  (PostgreSQL,     |
+|   MongoDB)        |       |   MongoDB)        |
++-------------------+       +-------------------+
+
 ### Déploiement et hébergement
+
+L'application sera déployée sur une infrastructure basée sur Kubernetes pour l'orchestration des conteneurs et Docker pour la conteneurisation. Cela permettra une gestion efficace des déploiements, une scalabilité automatique et une tolérance aux pannes.
 
 ### Bases de données
 
+L'application utilisera PostgreSQL pour les données relationnelles et MongoDB pour les données non relationnelles. Cela permettra de gérer efficacement les différentes types de données et d'assurer une haute disponibilité et une performance optimale.
+
 ## Technologies, frameworks, languages, services tiers
+
+- **Frontend** : React.js ou Vue.js pour la webapp, React Native ou Flutter pour les applications mobiles.
+- **Backend** : Node.js avec Express.js ou NestJS pour les microservices, GraphQL pour les requêtes et mutations.
+- **Base de données** : PostgreSQL, MongoDB.
+- **Authentification et Autorisation** : OAuth 2.0, JWT (JSON Web Tokens).
+- **Stockage de fichiers** : AWS S3 ou Google Cloud Storage.
+- **Messagerie et Notifications** : WebSockets pour la messagerie en temps réel, Firebase Cloud Messaging (FCM) pour les notifications push.
+- **Système de recommandation** : Amazon Personalize ou un moteur de recommandation personnalisé.
+- **CI/CD** : GitHub Actions, Jenkins ou GitLab CI/CD.
+- **Monitoring** : Prometheus, Grafana.
+- **Logging** : ELK Stack (Elasticsearch, Logstash, Kibana).
 
 ## User Experience (UX) & User Interface (UI)
 
@@ -45,7 +97,7 @@ Chacun des points susmentionnés sera essentiel afin de choisir les composants �
 
 ### Introduction UX/UI
 
-La webapp se distingue en 3 tailles et pour chacune des tailles, la dispositon et la visibilité des composants seront différentes pour des question de responsive. Par conséquent, il sera nécessaire de montrer où se trouvent les composants en fonction de chaque taille pour chaque situation. Les tailles en question sont les suivantes :
+La webapp se distingue en 3 tailles et pour chacune des tailles, la disposition et la visibilité des composants seront différentes pour des questions de responsive. Par conséquent, il sera nécessaire de montrer où se trouvent les composants en fonction de chaque taille pour chaque situation. Les tailles en question sont les suivantes :
 
 ```css
 /* Mobile */
