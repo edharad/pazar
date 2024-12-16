@@ -1,20 +1,29 @@
 # Pazar 0.0.0
 
+## Table des matières
+
+1. [Présentation](#présentation)
+2. [Journal de bord](#journal-de-bord)
+3. [Architecture de l'application](#architecture-de-lapplication)
+   - [Déploiement et hébergement](#déploiement-et-hébergement)
+   - [Bases de données](#bases-de-données)
+4. [Technologies, frameworks, languages, services tiers](#technologies-frameworks-languages-services-tiers)
+5. [User Experience (UX) & User Interface (UI)](#user-experience-ux--user-interface-ui)
+   - [Introduction UX/UI](#introduction-uxui)
+   - [Landing UX/UI](#landing-uxui)
+   - [Inscription et connexion UX/UI](#inscription-et-connexion-uxui)
+   - [Layout UI](#layout-ui)
+   - [Feed principal (Accueil) UX/UI](#feed-principal-accueil-uxui)
+6. [Fonctionnalités](#fonctionnalités)
+7. [Installation et déploiement](#installation-et-déploiement)
+8. [Contributions](#contributions)
+9. [Licences et crédits](#licences-et-crédits)
+
 ## Présentation
 
 L'objectif de l'application "Pazar" est de fournir une place de marché en ligne sécurisée pour le commerce entre particuliers. Notamment la vente et l'achat de biens entre particuliers. Cette place de marché se présente sous la forme d'un réseau social semblable aux applications déjà existantes. Cependant, tous les utilisateurs doivent passer une procédure de vérification d'identité (KYC) afin de vendre ou d'acheter des produits sur la plateforme. Cette procédure est semblable à celle des applications de trading de cryptomonnaie. L'application répond au besoin croissant de garantir la sécurité des achats et des ventes au sein de relations commerciales de tout type (C2C, B2C, B2B, etc.). Pazar souhaite s'étendre globalement dans le monde afin de promouvoir les circuits économiques courts.
 
-Pazar sera une application multiplatformes que l'on pourra retrouver en tant que webapp avec accès par URL, en application mobile et tablette pour les iOS, Android etc, et d'autres supports si cela est intéressant pour l'expansion du projet. Voici une liste non exhaustive des points abordés dans ce document :
-
-- L'utilisation dynamique du fichier README en tant que journal de bord
-- Les fonctionnalités de l'application
-- Les technologies, frameworks et languages utilisés
-- Les documents annexes et ce qu'ils contiennent
-- L'architecture de l'application
-- Les bases de données
-- Le déploiement et l'hébergement
-- L'UX/UI
-- Les services tiers
+Pazar sera une application multiplatformes que l'on pourra retrouver en tant que webapp avec accès par URL, en application mobile et tablette pour les iOS, Android etc, et d'autres supports si cela est intéressant pour l'expansion du projet.
 
 ## Journal de bord
 
@@ -34,9 +43,7 @@ Le présent fichier (README) fait office de journal de bord afin de présenter l
 
 Chacun des points susmentionnés sera essentiel afin de choisir les composants à développer, déterminer l'architecture optimale de l'application, faciliter la programmation des tests unitaires et des tests fonctionnels, savoir quels frameworks, langages ou services tiers doivent être utilisés, et isoler les problèmes potentiels liés à la sécurité. Par conséquent cette partie du README sera mise à jour continuellement en fonction des décisions technologiques qui seront prises durant le développement et les mises à jour de l'application.
 
-### 0. Introduction UX/UI
-
-L'expérience utilisateur diffère en fonction de la plateforme sur laquelle l'application est lancée. Ici, nous allons différencier 3 versions d'application. Webapp, iOS et android. D'autres versions pourront être développées ultérieurement. Elles partageront les mêmes données mais il y aura quelques différences en termes d'interface. Ces aspects seront clarifiés dans les explications relatives à l'UI.
+### Introduction UX/UI
 
 La webapp se distingue en 3 tailles et pour chacune des tailles, la dispositon et la visibilité des composants seront différentes pour des question de responsive. Par conséquent, il sera nécessaire de montrer où se trouvent les composants en fonction de chaque taille pour chaque situation. Les tailles en question sont les suivantes :
 
@@ -63,19 +70,21 @@ Le rendu en fonction des tailles ne devrait pas radicalement différer entre la 
 - Explication de l'expérience de l'utilisateur avec chaque élément de l'interface.
 - Redirections et changement en cas de succès ou d'erreurs.
 
-Aussi pour faciliter les choses nous allons à chaque fois montrer la différence en terme de rendu, si il y en a, de la dipositiond des éléments en fonction de la taille.
-
-### 1. Landing
+### Landing UX/UI
 
 --> IMAGE LANDING PAGE WEB DESKTOP, MOBILE, TABLETTE
 
-### 2. Inscription et connexion
+#### 1.1. Landing - taille destkop UX/UI
 
-#### 2.0. Introduction - Inscription et connexion
+#### 1.1. Landing - taille tablette UX/UI
 
-Lors de la première partie de l'inscription, l'utilisateur passera directement par une inscription par email ou numero de téléphone sur le formulaire de l'interface de la landing page. Les étapes sont numérotées ci-dessous. Lorsqu'on passe d'une étape à l'autre cela signifie qu'un évènement ou un déclencheur a eu lieu, tel qu'un clique sur un bouton par exemple.
+#### 1.2. Landing - taille mobile UX/UI
 
-#### 2.1. Formulaire d'inscription simple
+### Inscription et connexion UX/UI
+
+#### 2.1. Introduction - Inscription et connexion UX/UI
+
+#### 2.2. Formulaire d'inscription simple - Inscription et connexion UX/UI
 
 --> IMAGES DE L'INTERFACE FORMULAIRE INSCRIPTION
 
@@ -90,19 +99,19 @@ Suite à la demande d'inscription, l'utilisateur
 - Mot de passe avec conditions (ex: nombre de caractères minimum, chiffres, majuscules, minuscules). Il doit pouvoir enregistrer le mot de passe si il le souhaite et l'authentification à deux facteurs, avec envoie du code par sms ou par email a lieu d'office. Sur mobile, il pourra choisir de se connecter de façon biometrique. Sur ordinateur aussi mais c'est une fonctionnalité propre a la reconnaissance digital sur macbook par exemple.
 - Une case à cocher qui stipule que l'utilisateur accepte nos conditions d'utilisation, notre charte de confidentialité et notre politique des données. Il peut les consulter en cliquant dessus.
 
-Lorsqu'il a terminé d'entrer toutes infromations il passe à la suite en envoyant ses donnés via le bouton.
+Lorsqu'il a terminé d'entrer toutes les infromations, il passe à la suite en envoyant ses donnés via le bouton.
 
-#### 2.2. Validation avec code reçu
+#### 2.3. Validation avec code reçu UX/UI
 
 --> IMAGE DE L'INTERFACE VALIDATION CODE
 
 Un mail ou un sms, en fonction de ce qu'il a entré, lui est envoyé avec un code de vérification afin de finaliser cette première inscription dans l'écosystème et activer le compte. L'utilisateur est face à un component qui lui demande d'entrer le code. Lorsque le code est entré, cette phase de l'inscription est terminée et on peut passer à la suite. A cette étape, nous avons dores et déjà des données sur cet utilisateur confirmé. L'adresse email et/ou le numéro de téléphone.
 
-#### 2.3. KYC - Procédure complète
+#### 2.4. KYC - Procédure complète UX/UI
 
 INFORMATION : il est possible que pour le KYC l'application fasse appel à un service tiers déjà programmé.
 
-##### 2.3.1. KYC - INFORMATIONS ET CONDITIONS DU KYC
+##### 2.3.1. KYC - INFORMATIONS ET CONDITIONS DU KYC UX/UI
 
 --> IMAGE DE LA PREMIÈRE ÉTAPE DU KYC INFORMATIONS ET CONDITIONS DU KYC
 
@@ -112,20 +121,20 @@ Lui sera également demandé d'accepter le suivi de la localisation afin d'affin
 
 --> IMAGE POPUP LOCALISATION
 
-##### 2.3.2. KYC - FORMULAIRE D'INSCRIPTION COMPLET
+##### 2.3.2. KYC - FORMULAIRE D'INSCRIPTION COMPLET UX/UI
 
 --> IMAGE DE LA DEUXIÈME ETAPE DU KYC > FORMULAIRE
 
 L'utilisateur arrive face à un componant qui contient un formulaire muni d'un bouton suivant. Ce formulaire est la première étape du KYC, si il n'est pas dûment rempli, l'utilisateur ne peut pas poursuivre en cliquant sur le bouton suivant et un message d'erreur demandant de remplir correctement le formulaire s'affiche. Tous les champs sont obligatoires initialement. Il est demandé au client de remplir le formulaire dans lequel les champs sont les suivants : nom et prénoms (au pluriel) tels qu'inscrits sur sa carte d'identité ou permis de conduire, son pays de résidence, son adresse, code postale, ville et numero de téléphone.
 Si la procédure est interrompue avant la fin, une sauvegarde de l'état et de l'étape du processus d'inscription a lieu et si il revient sur l'appli, il pourra poursuivre son inscription où il en était avec un message qui lui dira "Vous êtes de retour pour finaliser votre inscription etc...".
 
-##### 2.3.3. KYC - UPLOAD ID CARD OR LICENSE
+##### 2.3.3. KYC - UPLOAD ID CARD OR LICENSE UX/UI
 
 --> IMAGE DE LA TROISIÈME ETAPE DU KYC - UPLOAD DE L'ID
 
 L'utilisateur arrive sur un component qui lui demande de upload une photo de sa carte d'identité nationale ou de son permis de conduire, recto et verso. Une fois cela fait il peut cliquer sur le bouton suivant.
 
-##### 2.3.4. KYC - UPLOAD OFFICAL DOCUMENT, ADRESS VERIFICATION OR BIOMETRIC VERIFICATION
+##### 2.3.4. KYC - UPLOAD OFFICAL DOCUMENT, ADRESS VERIFICATION OR BIOMETRIC VERIFICATION UX/UI
 
 --> IMAGE DES DEUX OPTIONS DE VERIFICATION
 --> IMAGE DE LA QUATRIÈME ETAPE DU KYC - UPLOAD DE DOCUMENT OFFICIEL
@@ -133,49 +142,37 @@ L'utilisateur arrive sur un component qui lui demande de upload une photo de sa 
 
 L'utilisateur arrive ensuite, sachant qu'il a fait l'incription sur la webapp, il lui est demandé de fournir la copie d'un document officiel qui prouve qu'il est bien le détenteur de cette identité. Cela n'aura pas lieu sur la version mobile ou si la webapp est sur un navigateur sur mobile ou tablette car la reconnaissance faciale prendra le relai à cette étape là. Donc j'imagine que sur la version webapp desktop, ne seront acceptées que les factures de téléphone ou une facture de l'assurance maladie. Cependant, il faudra proposer les deux options à l'utilisateur. Vérifier par facture ou vérifier par face ID.
 
-##### 2.3.5. KYC - VERIFICATION EN COURS
+##### 2.3.5. KYC - VERIFICATION EN COURS UX/UI
 
 --> IMAGE DE LA CINQUIÈME ÉTAPE DU KYC - VÉRIFICATION ET REDIRECTION
 
 L'utilisateur est maintenant face à un component qui montre un cercle en chargement afin de lui montrer que l'analyse de sa procédure de KYC est en cours. Si c'est valide le cercle se transforme en cercle avec un vu et un message de succès. S'il y a une erreur l'état du component change et affiche le message d'erreur. Le message d'erreur s'affiche à l'utilisateur. L'info retourne un cliquable afin de corriger le point si cela est possible. Alors l'utilisateur retourne à l'étape du KYC où il peut corriger ce qu'il a fait, corrige, clique sur suivan, arrive à l'étape suivante qu'il faut corriger s'il y en a encore ou arrive à la fin de la procédure de KYC. L'analyse a lieu à nouveau, s'il n'y a pas d'autres étapes à corriger. Si c'est une erreur qui ne peut être corrigé telle qu'une interdiction quelconque ou légale nous informons l'utilisateur que pour ces raisons nous ne pouvons poursuivre son inscription.
 En cas de réussite, le component change d'état, affiche un vu vert ou autre chose qui confirme l'inscription et l'utilisateur est redirigé automatiquement vers l'étape du choix des centres d'intérets.
 
-#### 2.4. Centres d'intérêts
+#### 2.5. Centres d'intérêts UX/UI
 
 --> IMAGE DE L'INTERFACE AFFICHANT LE COMPONENT CENTRE D'INTÉRETS
 
 Durant cette étape, lui sont proposées des catégories de produits ou des centres d'intérêts. Par exemple, il peut y avoir le sport, le fitness, les automobiles, la construction, les biens immobiliers etc. Le choix de ces centres d'intérêts se devra d'être au minimum de 5 obligatoires. Cette étape est cruciale afin d'initialiser le feed. Bien entendu le système de recommandation étant bien plus technique et dynamique que cela, le contenu du feed dépendera de bien plus de facteurs que ce qu'il aura choisi comme centres d'intérêts. Nous nous y attarderons dans le point spécifique au développement du feed et de l'intégration du système de recommandation avec le traitement des données générées par l'utilisateur.
 
-#### 2.5. Activation de l'authentification à 2 facteurs (2FA) ou authentication biométrique
+#### 2.6. Activation de l'authentification à 2 facteurs (2FA) ou authentication biométrique UX/UI
 
 --> IMAGE DE L'INTERFACE AFFICHANT LA PROPOSITION D'ACTIVATION DE L'AUTHENTIFICATION A DEUX FACTEURS
 
 Cette étape précède la finalisation de l'inscription et demande à l'utilisateur s'il souhaite activer l'authentification à deux facteurs pour des raisons de sécurité. S'il souhaite le faire, il peut choisir de le faire via application d'authentication, numéro de téléphone. Il peut également choisir de le faire de façon biométrique. Il peut accepter et configurer ou refuser et passer à la suite.
 
-### 3. Layout global (Acceuil)
+### Layout UI
 
-#### 3.0.Introduction layout global
+#### 3.1. Layout - Global (accueil)
 
 --> IMAGES DU LAYOUT GLOBAL ACCUEIL (desktop, tablette, mobile)
 --> IMAGES DU LAYOUT DE LA VERSION MOBILE ET DIFFERENCES AVEC WEBAPP MOBILE
 
 Une brève présentation générale s'impose afin de rapidement connaitre les sections du layout général et différencier celles qui sont visibles en fonction de la taille de l'écran.
 
-- Taille desktop
-
-Celle qui comprend le plus d'éléments ou plutôt le plus de détails on peut constater trois sections majeures, la nav bar verticale (sidenav) à gauche qui contient le logo textuel mais pas icone, les éléments du menu, le menu hamburger contenant le bouton des paramètres et autres. Puis il y a section principale et centrale qui elle contient une sorte de div ou section qui contient les medaillons relatifs aux abonnements afin de visuliser leurs storys et que l'on peut scroller horizontalement. Je pense que ce dernier sera un div sachant que si l'élément actif du menu change, la barre de storys disparait. En dessous de cette barre on retrouve le le feed principal où apparaitront les annonces. Feed que l'on peut scroller verticalement.  Puis il y a la section secondaire qui elle contient les suggestions d'amis ou de communautés auxquelles on peut s'abonner.
-
-- Taille tablette
-
-La nav bar verticale (sidenav) moins large qu'en taille desktop à gauche. Cette dernière comprend le logo icone masi pa textuel, les éléments du menu mais sans les titres, le menu hamburger contenant le bouton des paramètres et autres. Puis il y a section principale et centrale qui elle contient le contenu relatif à l'élément du menu actif. A droite il n'y a pas la section secondaire. Celle-ci a disparu au profit de la section principale qui prend désormais le reste de la largeur.
-
-- Taille mobile
-
-La nav bar verticale (sidenav) n'est plus visible. A la place elle s'est séparée en deux. Une topbar et une bottombar. Les deux sont horizontal, une positionnée en bordure supérieur et l'autre en bordure inferieur. Celle en bordure superieur contient en partant de la gauche, le titre textuel, une barre de recherche et le bouton de notification mais seulement l'icone du bouton, pas le texte. Celle en bordure inférieur contient seulement les icones des éléments de menu suivants : Accueil, Explorer, Boutique, Panier, Messages, Profil. Puis il y a section principale et centrale qui elle contient le contenu relatif à l'élément du menu actif et qui se trouve entre les deux navbar. Le menu secondaire est quant à lui invisible. **Il est important de savoir que les éléments visible dans la disposition en taille mobile de la webapp ne sont pas les même que ceux en mobile app.**
-
 Ci-dessous une liste simplifiée des sections visibles et invisibles en fonction de la taille de l'écran.
 
-| Menu items    | Desktop ≥ 1025px      | Tablette ≥ 481px && ≤ 1024px | Mobile ≤ 480px  |
+| Components    | Desktop ≥ 1025px      | Tablette ≥ 481px && ≤ 1024px | Mobile ≤ 480px  |
 | ------------- | --------------------- | ---------------------------- | --------------- |
 | SideNav       | ✔️                     | ✔️                            | ❌              |
 | Logo Text     | ✔️                     | ❌                           | ❌              |
@@ -185,7 +182,19 @@ Ci-dessous une liste simplifiée des sections visibles et invisibles en fonction
 | SearchBar     | ❌                    | ❌                           | ✔️               |
 | Suggest Sec   | ✔️                     | ❌                           | ❌              |
 
-#### 3.1. Navbar menu
+##### 3.1.1. Layout global taille desktop
+
+Celle qui comprend le plus d'éléments ou plutôt le plus de détails on peut constater trois sections majeures, la nav bar verticale (sidenav) à gauche qui contient le logo textuel mais pas icone, les éléments du menu, le menu hamburger contenant le bouton des paramètres et autres. Puis il y a section principale et centrale qui elle contient une sorte de div ou section qui contient les medaillons relatifs aux abonnements afin de visuliser leurs storys et que l'on peut scroller horizontalement. Je pense que ce dernier sera un div sachant que si l'élément actif du menu change, la barre de storys disparait. En dessous de cette barre on retrouve le le feed principal où apparaitront les annonces. Feed que l'on peut scroller verticalement.  Puis il y a la section secondaire qui elle contient les suggestions d'amis ou de communautés auxquelles on peut s'abonner.
+
+##### 3.1.2. Layout global taille tablette
+
+La nav bar verticale (sidenav) moins large qu'en taille desktop à gauche. Cette dernière comprend le logo icone masi pa textuel, les éléments du menu mais sans les titres, le menu hamburger contenant le bouton des paramètres et autres. Puis il y a section principale et centrale qui elle contient le contenu relatif à l'élément du menu actif. A droite il n'y a pas la section secondaire. Celle-ci a disparu au profit de la section principale qui prend désormais le reste de la largeur.
+
+##### 3.1.3. Layout global taille mobile
+
+La nav bar verticale (sidenav) n'est plus visible. A la place elle s'est séparée en deux. Une topbar et une bottombar. Les deux sont horizontal, une positionnée en bordure supérieur et l'autre en bordure inferieur. Celle en bordure superieur contient en partant de la gauche, le titre textuel, une barre de recherche et le bouton de notification mais seulement l'icone du bouton, pas le texte. Celle en bordure inférieur contient seulement les icones des éléments de menu suivants : Accueil, Explorer, Boutique, Panier, Messages, Profil. Puis il y a section principale et centrale qui elle contient le contenu relatif à l'élément du menu actif et qui se trouve entre les deux navbar. Le menu secondaire est quant à lui invisible. **Il est important de savoir que les éléments visible dans la disposition en taille mobile de la webapp ne sont pas les mêmes que ceux en mobile app.**
+
+#### 3.2. Layout - Navbar(s) et menu
 
 --> IMAGE DES NAVBARS SELON CHAQUE TAILLE
 
@@ -209,7 +218,7 @@ La navbar est un élément du layout qui est essentiel pour la navigation de l'u
 | Paramètres    | ✔️                     | ❌                           | ❌              |
 | Titles        | ✔️                     | ❌                           | ❌              |
 
-##### 3.1.1. Taille desktop
+##### 3.2.1. Layout Navbar - taille desktop
 
 --> IMAGE DE LA DISPOSITION DE LA NAVBAR EN TAILLE DESKTOP
 
@@ -218,6 +227,7 @@ Comme on peut le constater sur l'image pour la taille desktop, on retrouve la na
 La diposition est la suivante :
 
 Titre de l'application (image du logo textuel)
+
 --espace--
 
 - (Icone maison)       Accueil
@@ -233,32 +243,47 @@ Titre de l'application (image du logo textuel)
 - (Icone profile)      Profil
 
 --espace--
+
 Proche du bord inférieur, le menu hamburger qui une fois cliquée affiche un menu déroulant vers le haut qui contient d'autres options :
 
 - (Icone roue dentée)  Paramètres
 - (Icone d'activité)   Votre activité
 - (Icone lune)         Changer de thème
 
-##### 3.1.2. Taille tablette
+##### 3.2.2. Layout Navbar - Taille tablette
 
 --> IMAGE DE LA DISPOSITION DE LA NAVBAR EN TAILLE TABLETTE
 
-#### 3.2. Section principale
+Ici rien n'est très différent de la taille desktop hormis le fait qu'il n'y a pas le texte lié aux éléments du menu.
 
---> IMAGES DE LA SECTION PRINCIPALE AVEC ET SANS ABONNEMENTS
+##### 3.2.3. Layout Navbar - Taille mobile
+
+--> IMAGE DE LA DISPOSITION DE LA NAVBAR EN TAILLE MOBILE
+
+#### 3.3. Layout - Section principale
+
+--> IMAGES DE LA SECTION PRINCIPALE AVEC ET SANS ABONNEMENTS POUR TOUTES LES TAILLES
 
 L'utilisateur arrive sur l'accueil. Autrement dit le feed principal où s'affichent les annonces publiées par les autres utilisateurs. Les annonces peuvent être celles publiées par les abonnés/abonnements ou peuvent être celles proposées par le système de recommandation. L'utilisateur a la possibilité de scroller vers le bas afin de faire défiler le feed et consulter les annonces. Le feed est configuré via un système de recommandation que l'on retrouve en tant que service sur AWS et nommé Amazon Personalize et qui prend en compte une multitude de paramètres liés à l'utilisateur et l'écosystème.
 
 Comme l'utilisateur n'a pas d'abonnés ni d'abonnements initialement, il a la possibilité, grâce à l'apparition d'un component situé sur la partie superieur de la section où se situe le feed et qui normalement contient le flux des storys des abonnements, de cliquer sur un bouton afin de changer le contenu du flux principale en dessous et s'abonner à d'autres utlisateurs via suggestion ou d'inviter ses contacts. D'ajouter des ami(e)s qui lui sont suggerés en fonction des données transmises ou du système de suggestion, qu'il faudra également configuré. Mais il peut également inviter ses contacts à rejoindre l'application.
 
+##### 3.3.1. Layout Section principale - Taille desktop
+
+##### 3.3.2. Layout Section principale - Taille Tablette
+
+##### 3.3.3. Layout Section principale - Taille Mobile
+
 --> IMAGE DU FLUX DE SUGGESTION
 --> IMAGE DE L'INVITATION DES AMIS ET SUGGESTION ET POPUP DE DEMANDE D'ACCÈS AUX CONTACTS POUR LA VERSION MOBILE
 
-#### 3.3. Section secondaire
+#### 3.4. Layout - Section secondaire
 
-Suggestions d'amis, de communautés
+--> IMAGE DE LA SECTION SECONDAIRE DE SUGGESTION D'AMIS ET PROFIL PERSO
 
-### 4. Changement d'interface en fonction de l'élément actif du menu
+Cette section comporte trois parties, une avec la photo profil de l'utilisateur et son nom d'utilisateur. Il peut cliquer dessus pour accéder à son propre profil. La deuxième en dessous liste un extrait des profils (photo profil et nom d'utilisateurs) d'autres utilisateurs et la troisième en dessous liste un extrait de communautés auxquelles il peut également demander de s'abonner affiché de la même façon. Comme dit précédemment, cette section n'est pas visible sur la version taille tablette et mobile.
+
+### Feed principal (Accueil) UX/UI
 
 ## Fonctionnalités
 
@@ -284,6 +309,43 @@ Suggestions d'amis, de communautés
 
 ### Publication de réels et stories
 
-### Systéme de promotion et de ads pour les produits à vendre
+### Système de promotion et de publicités pour les produits à vendre
 
-### Wallet
+## Installation et déploiement
+
+## Contributions
+
+## Licences et crédits
+
+En résumé :
+
+- Accueil : via l'icône home avec un service feed personnalisé en fonction d'un système de recommandation. J'aimerais utiliser initialement celui d'Amazon, Amazon Personalize. Si je ne me trompe pas, il permet de mettre en place un système de recommandation. Ce feed se composera d'annonces postées par les utilisateurs et les abonnements de l'utilisateur.
+- Explorer : accès au marketplace global via l'icône explorer pour la recherche active des produits. Affiche en vrac des images ou vidéos d'annonces en fonction du système de recommandation, mais permet aussi de faire une recherche simple ou une recherche complexe via le choix de catégories de produit, localisation, dimensions, fourchette de prix.
+- Recherche : accessible via l'icône de la loupe pour rechercher d'autres utilisateurs en fonction de leur nom, prénom, nom d'utilisateur, etc.
+- Boutique : via l'icône boutique personnalisée qui n'est pas le profil de l'utilisateur mais qui affiche les annonces de produits que celui-ci met en vente.
+- Panier : via l'icône panier qui regroupe les produits qu'il a mis dedans.
+- Dashboard : via l'icône dashboard qui permet de visualiser ses ventes, la liste des produits qu'il vend, éditer ses annonces.
+- Annonces : créer de nouvelles annonces via le menu icône + comme sur Instagram.
+- Messagerie : pour communiquer avec les autres utilisateurs via le menu icône avion en papier.
+- Profil : utilisateur via l'icône photo de profil sur lequel il y a sa photo de profil, etc. Comme sur Instagram, mais nous allons changer le contenu de ce qu'on trouve sur le profil pour les abonnés et ce qu'on y trouve pour l'utilisateur lui-même.
+- Communautés : unique via l'icône communauté. Les communautés seront uniques et par région avec des règles de gouvernance imposées par Pazar. Nous ne voulons pas 400 communautés qui parlent de chasse et de pêche, par exemple, mais une seule par région. Non hiérarchique mais structuré en arborescence.
+- Paramètres : via l'icône roue dentée pour éditer le nom d'utilisateur, son mot de passe, gérer son compte en général.
+- Mode sombre et clair.
+- Notifications : via l'icône de notification en cas d'ajout d'abonnement, etc.
+
+Le autres fonctionnalités sont liés a chacun des services :
+
+- Système de recommandation annonces et suggestions d'amis ou de communauté
+- Système de paiement groupé avec distribution vers les vendeurs
+- Sécurité des paiements
+- Catégorisation de produit pour la rechercher et le postage d'annonce. Catégorisation exhaustive avec choix des dimensions et identification de produit ou de biens pour connaitre les caractéristiques.
+- Calculs des frais de livraison en fonction du pays et des caractéristiques du produit.
+- Confirmation d'envoi du colis avec identification du produit et suivi. Voir lien avec la poste.
+- Sécurité de la livraison, choix de la livraison en main propre ou autre
+- Système de mise aux enchères.
+- Feed personnalisé pour les communautés
+- Commentaires, likes, partages des annonces, signaler, possibilité de noter le vendeur en cas d'achat avec justification de la note, et autres modes d'interaction avec les annonces.
+- Un chat avec la possibilité d'envoyer des pièces jointes
+- Graphiques , données, comptabilisation pour le dashboard
+- Liste d'abonnements et d'abonnés
+- Générateur de contrat avec signature électronique
