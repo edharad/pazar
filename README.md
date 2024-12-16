@@ -31,7 +31,6 @@ Pazar est une application de marché en ligne sécurisée pour le commerce entre
    - [Landing UX/UI](#landing-uxui)
    - [Inscription et connexion UX/UI](#inscription-et-connexion-uxui)
    - [Layout UI](#layout-ui)
-   - [Feed principal (Accueil) UX/UI](#feed-principal-accueil-uxui)
 6. [Fonctionnalités](#fonctionnalités)
 7. [Installation et déploiement](#installation-et-déploiement)
 8. [Contributions](#contributions)
@@ -63,7 +62,7 @@ L'application utilisera PostgreSQL pour les données relationnelles et MongoDB p
 
 ### Frontend
 
-- **Webapp** : React.js ou Vue.js
+- **Webapp** : Next.js
 - **Applications mobiles** : React Native ou Flutter
 
 ### Backend
@@ -437,8 +436,6 @@ Comme l'utilisateur n'a pas d'abonnés ni d'abonnements initialement, il a la po
 
 Cette section comporte trois parties, une avec la photo profil de l'utilisateur et son nom d'utilisateur. Il peut cliquer dessus pour accéder à son propre profil. La deuxième en dessous liste un extrait des profils (photo profil et nom d'utilisateurs) d'autres utilisateurs et la troisième en dessous liste un extrait de communautés auxquelles il peut également demander de s'abonner affiché de la même façon. Comme dit précédemment, cette section n'est pas visible sur la version taille tablette et mobile.
 
-### Feed principal (Accueil) UX/UI
-
 ## Fonctionnalités
 
 ### Authentication & KYC
@@ -466,6 +463,21 @@ Cette section comporte trois parties, une avec la photo profil de l'utilisateur 
 ### Système de promotion et de publicités pour les produits à vendre
 
 ## Installation et déploiement
+
+### Installation de la webapp (Next.js)
+
+1. Clonez le dépôt :
+
+  ```bash
+  git clone https://github.com/votre-repo/pazar.git
+  cd pazar
+  ```
+  
+2. Installez les dépendances
+
+```bash
+npm install
+```
 
 ## Contributions
 
