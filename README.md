@@ -1,5 +1,7 @@
 # Pazar - Marketplace Application
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue) ![License](https://img.shields.io/badge/license-Proprietary-red) ![Status](https://img.shields.io/badge/status-In_Development-yellow)
+
 ## **Introduction**
 
 Pazar est une application de place de marché sécurisée pour le commerce entre particuliers et entreprises. Elle intègre des fonctionnalités de réseau social ainsi qu'une procédure de vérification d'identité (KYC) pour sécuriser les transactions.
