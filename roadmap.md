@@ -43,7 +43,7 @@
 - **Description** : Implémenter le service d'authentification avec gestion des utilisateurs.
 - **Technologies/Services** : Django, PostgreSQL.
 - **Sous-tâches** :
-  - [x] Créer un modèle utilisateur.
+  - [ ] Créer un modèle utilisateur.
   - [ ] Implémenter les APIs de connexion et d'inscription.
   - [ ] Ajouter le support pour le KYC via Onfido.
 
