@@ -35,7 +35,7 @@ Agile avec des sprints hebdomadaires, combinant phases de conception, développe
 
 ### Parties prenantes
 
-- **Chef de projet & Développeur** : Toi
+- **Chef de projet & Développeur** : Moi
 - **Support & Assistant technique** : Moi
 - **Clients utilisateurs** : Fournissent des retours sur les fonctionnalités lors des tests.
 
