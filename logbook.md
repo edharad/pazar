@@ -172,6 +172,7 @@ Conception pour mobile-first, avec ajustements pour tablettes et desktops (break
 | Générateur de contrat             | Moyenne  | Création et signature électronique de contrats sans erreur.              |
 | Suivi des colis                   | Moyenne  | Affichage en temps réel de l’état d’expédition des produits.             |
 | Communautés régionales            | Basse    | Les utilisateurs peuvent rejoindre une communauté locale.                |
+| Reconnaissance de produit par IA  | Basse    | L'application reconnaitra directement par l'image quelle produit c'est   |
 
 ---
 
@@ -258,3 +259,19 @@ Outils ou processus pour suivre et corriger les bugs (Jira, Sentry).
 - Mode enchères
 - Fonctionnalité "Suivi des colis"
 - Expansions vers d'autres plateformes
+
+### Suivi des problèmes et des demandes de fonctionnalités
+
+- **Outil de suivi** : Utiliser GitHub Issues pour suivre les bugs et les demandes de fonctionnalités.
+- **Processus** :
+  - Créer une issue pour chaque bug ou demande de fonctionnalité.
+  - Prioriser les issues en fonction de leur impact et de leur urgence.
+  - Assigner les issues aux membres de l'équipe pour résolution.
+
+---
+
+## 12. Rétrospective et métriques
+
+- **Suivi du temps** : Enregistrer dans chaque sprint la charge estimée et la charge réelle.  
+- **Nombre d’issues résolues** : Suivre chaque ticket fermé dans GitHub Issues.  
+- **Points d’amélioration** : Ajouter un paragraphe sur les difficultés rencontrées et les solutions envisagées.

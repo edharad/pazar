@@ -173,7 +173,15 @@ Créer une expérience de commerce en ligne sécurisée et personnalisée pour l
 
 ## **Contribution**
 
-Nous travaillons en équipe restreinte pour livrer un MVP robuste. Les suggestions d'amélioration sont les bienvenues !
+- **Workflow** : Créez une branche, codez votre fonctionnalité, ouvrez une pull request.
+- **Review** : Les membres de l’équipe commentent et valident la pull request.
+
+---
+
+## **Déploiement**
+
+- **Local** : Se référer à la section "Installation et exécution locale".
+- **Cloud** : Pour déployer, suivre le guide dans /docs/deploiement.md (Terraform, Kubernetes).
 
 ---
 
