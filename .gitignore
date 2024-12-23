@@ -130,5 +130,5 @@ dist
 .pnp.*
 
 # other files
-
+venv/
 .notes.txt
